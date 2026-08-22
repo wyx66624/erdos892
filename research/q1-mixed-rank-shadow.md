@@ -333,12 +333,17 @@ Fix an envelope \(f:\mathbb N\to\mathbb N\), and let \(X_f\) be the space of all
 
 For an integer \(C\ge1\), let \(D_C\subseteq X_f\) consist of sequences having a primitive dominator with constant \(C\).
 
-**THEOREM 7.1 (Baire finite-obstruction dichotomy).** Assume (X_f\ne\varnothing). The space \(X_f\) is compact metrizable. Each \(D_C\) is closed. Consequently:
+**THEOREM 7.1 (Baire finite-obstruction dichotomy).** Assume \(X_f\ne\varnothing\). The space \(X_f\) is compact metrizable. Each \(D_C\) is closed. Consequently:
 
 1. If every member of \(X_f\) has some finite domination constant, then there are a finite admissible prefix \(Q\) and a constant \(C\) such that every member of \(X_f\) extending \(Q\) belongs to \(D_C\).
 2. If, for every nonempty prefix cylinder \([Q]\subseteq X_f\) and every \(C\), there is a longer extendible prefix \(Q'\) with no primitive \(C\)-witness, then the sequences in \(X_f\) having no primitive dominator form a comeagre, in particular nonempty, subset.
 
-**Proof.** The product of finite discrete spaces is compact metrizable. Strict increase and quasi-primitivity are each determined by finitely many coordinates at a time, so \(X_f\) is closed. Finite antichain compactness says \(b\in D_C\) if and only if every finite prefix has a primitive \(C\)-witness. Thus the complement of \(D_C\) is a union of cylinders based on finite \(C\)-hard prefixes, so \(D_C\) is closed.
+**Proof.** The product of finite discrete spaces is compact metrizable. Strict increase and quasi-primitivity are each determined by finitely many coordinates at a time, so \(X_f\) is closed. For fixed \(b\) and \(C\), form a rooted tree whose level-\(n\) vertices are the tuples
+\[
+ a_1<\cdots<a_n,\qquad \{a_1,\ldots,a_n\}\text{ primitive},\qquad
+ a_j\le Cb_j\quad(j\le n),
+\]
+with restriction as the parent map. Every level is finite. Hence König's infinity lemma says that \(b\in D_C\) if and only if every finite prefix has a primitive \(C\)-witness. Thus the complement of \(D_C\) is a union of cylinders based on finite \(C\)-hard prefixes, so \(D_C\) is closed.
 
 If \(X_f=\bigcup_C D_C\), the Baire category theorem gives some \(D_C\) nonempty interior, which contains a prefix cylinder. This proves (1). Under the hypothesis of (2), every cylinder contains a smaller cylinder disjoint from \(D_C\), so every \(D_C\) is nowhere dense. Baire then shows that \(X_f\setminus\bigcup_C D_C\) is comeagre. ∎
 
@@ -357,8 +362,8 @@ If \(p_N\) is the \(N\)-th prime, then
 \]
 
 Thus placing isolated copies of a fixed finite certificate at remote scales cannot preserve, let alone amplify, its lower bound. A negative construction needs nested or density-preserving hard extensions of the kind appearing in Theorem 7.1. This explains rigorously why a finite certificate alone is not an infinite counterexample.
-Under the normalized convention (C\ge1), the corresponding quantity is
-\(\max\{1,\widetilde c(LB)\}\), which tends to (1), so the same construction still
+Under the normalized convention \(C\ge1\), the corresponding quantity is
+\(\max\{1,\widetilde c(LB)\}\), which tends to \(1\), so the same construction still
 cannot amplify any obstruction above the trivial normalized floor.
 
 ## 8. Current bottleneck and proof-dependency chain
