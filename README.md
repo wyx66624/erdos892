@@ -34,6 +34,9 @@ sequence is already primitive.
   Q1 proof, strict mechanism barriers, and live alternative routes.
 - [`research/q2-actual-union.md`](research/q2-actual-union.md): extended Q2 proof,
   actual-union interfaces, counterexamples, and reproducible finite experiments.
+- [`research/general-deadline-antichain.md`](research/general-deadline-antichain.md):
+  fixed-dilation deadline margins, their weighted antichain dual, and an explicit
+  integrality gap in the actual divisor poset `P_15`.
 - [`archive/README.md`](archive/README.md): provenance and checksum of the supplied
   169-page partial-results manuscript.
 - [`archive/stage-2026-08-20.pdf`](archive/stage-2026-08-20.pdf): directly readable
