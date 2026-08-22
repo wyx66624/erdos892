@@ -15,9 +15,15 @@ Retain the notation of `research/q2-rank3-excess-screen.md` and
                          f_{\iota_k(m),3}(m)>0\}.
 \]
 
-Let `L_k` be the subset of terminals which admit a maximal-layer
-rank-three representation `m=dr`, `d in C_i`, `i=iota_k(m)`, with
-`tau_i(d)<=H_k`.  Theorem 2.1 of the excess-screen note gives
+Define the low-excess terminal set explicitly by
+
+\[
+ \mathcal L_k:=\{m\in\mathcal N_k:\ \exists d\in
+ \mathcal D_{\iota_k(m)}(m),\ \Omega(m/d)=3,\
+ \tau_{\iota_k(m)}(d)\le H_k\}.
+\]
+
+Theorem 2.1 of the excess-screen note gives
 
 \[
  |\mathcal L_k|=o_{A,B}(X_k).                                   \tag{1.1}
@@ -26,7 +32,8 @@ rank-three representation `m=dr`, `d in C_i`, `i=iota_k(m)`, with
 Indeed, choosing one such representation injects the terminal set into a
 subset of the pairs counted there; no uniqueness of representation is used.
 
-For every `m in G_k:=N_k\L_k`, select the least maximal-layer divisor `d(m)`
+Put \(\mathcal G_k:=\mathcal N_k\setminus\mathcal L_k\).  For every
+\(m\in\mathcal G_k\), select the least maximal-layer divisor `d(m)`
 whose complementary quotient `r(m)=m/d(m)` has rank three.  Write `i=iota_k(m)`
 and define
 
@@ -43,7 +50,8 @@ assumption,
  \frac{B_m}{A_m}=\frac{f_{i,3}(m)}{\nu_i(m)}.                   \tag{1.3}
 \]
 
-Since `m notin L_k`, its selected source has `tau_i(d)>H_k`; when `H_k>=4`,
+Since \(m\notin\mathcal L_k\), its selected source has `tau_i(d)>H_k`;
+when `H_k>=4`,
 maximality and Proposition 3.1 of the excess-screen note imply that this
 selected triple survives every rank-five promotion block.  Thus every object
 below is already conditioned on full maximality and on rank-five-screen
@@ -54,9 +62,11 @@ survival.
 Put
 
 \[
- K_k:=\max_{m\in C_k^{A,B}}\binom{\Omega(m)}3
+ K_k:=\max\!\left(1,\max_{m\in C_k^{A,B}}\binom{\Omega(m)}3\right)
        \ll_{A,B}(\log k)^3.                                    \tag{1.4}
 \]
+
+The inner maximum is taken to be zero when the terminal band is empty.
 
 For `0<=s<=ceil(log_2 K_k)`, define the diagonal bin
 
@@ -64,7 +74,14 @@ For `0<=s<=ceil(log_2 K_k)`, define the diagonal bin
  \mathcal G_{k,s}:=\{m\in\mathcal G_k:2^s\le B_m<2^{s+1}\}.  \tag{1.5}
 \]
 
-For a nonempty bin set
+Let
+
+\[
+ \mathcal S_k:=\{s:0\le s\le\lceil\log_2K_k\rceil,
+                       \ \mathcal G_{k,s}\ne\varnothing\}.
+\]
+
+For \(s\in\mathcal S_k\), set
 
 \[
  M_s:=|\mathcal G_{k,s}|,\quad I_s:=\sum_{m\in\mathcal G_{k,s}}A_m,
@@ -74,21 +91,22 @@ For a nonempty bin set
 
 ### Theorem 1.1 (binned incidence-energy criterion)
 
-Suppose there are `R_k -> infinity` and sets `J_k` of nonempty bins such
-that
+Suppose there are `R_k -> infinity` and sets
+\(\mathcal J_k\subseteq\mathcal S_k\) such that
 
 \[
- \sum_{s\notin J_k}M_s=o_{A,B}(X_k),                            \tag{1.7}
+ \sum_{s\in\mathcal S_k\setminus\mathcal J_k}M_s
+ =o_{A,B}(X_k),                                                  \tag{1.7}
 \]
 
 \[
- \mu_s\ge4R_k2^s\qquad(s\in J_k),                              \tag{1.8}
+ \mu_s\ge4R_k2^s\qquad(s\in\mathcal J_k),                    \tag{1.8}
 \]
 
 and
 
 \[
- \sum_{s\in J_k}
+ \sum_{s\in\mathcal J_k}
  \frac{E_s-I_s^2/M_s}{\mu_s^2}=o_{A,B}(X_k).                   \tag{1.9}
 \]
 
@@ -100,7 +118,8 @@ Then
 
 #### Proof
 
-For `s in J_k`, call `m in G_{k,s}` bad when `A_m<R_kB_m`.  By (1.5),
+For \(s\in\mathcal J_k\), call \(m\in\mathcal G_{k,s}\) bad when
+`A_m<R_kB_m`.  By (1.5),
 
 \[
  A_m<R_k2^{s+1}\le\mu_s/2.
@@ -116,7 +135,7 @@ therefore gives
 \]
 
 Summing (1.11), and using (1.7) and (1.9), shows that all but `o(X_k)`
-members of `G_k` satisfy `A_m>=R_kB_m`.  By (1.3), their total contribution
+members of \(\mathcal G_k\) satisfy `A_m>=R_kB_m`.  By (1.3), their total contribution
 to the symmetric rank-three mass is at most `X_k/R_k`; every exceptional
 terminal contributes at most one.  Finally (1.1) handles the low-excess
 terminals.  This proves (1.10).  □
@@ -162,7 +181,8 @@ sharpened from `nu_i(m)<=8` to `Q^+<=1`.
 
 ### Proposition 2.1 (divergent excess with at most one nontrivial witness)
 
-Let `H_i -> infinity`, `H_i=o(sqrt(U_i))`, put `N_i=L_i+H_i`, and choose
+Let `H_i -> infinity` be an integer sequence with
+`H_i=o(sqrt(U_i))`, put `N_i=L_i+H_i`, and choose
 primes exactly as in that construction:
 
 \[
@@ -176,6 +196,10 @@ and, for `i in I_k`,
  P_{i,k}\in\left((X_k/(2d_i))^{1/3},(X_k/d_i)^{1/3}\right),
  \qquad m_{i,k}=d_iP_{i,k}^3.                                  \tag{2.2}
 \]
+
+Since \(q_i\) is a prime distinct from `3`,
+\(\Omega(d_i)=N_i+1\), and hence
+\(\tau_i(d_i)=\Omega(d_i)-L_i=H_i+1\to\infty\).
 
 For every fixed `A<B` and all sufficiently large admissible `i,k`, the
 displayed representation has divergent source excess, lies in the correct
@@ -243,7 +267,8 @@ dropped from the incidence-energy target.
 
 ## 3. Audit of quantifiers and boundaries
 
-1. **Maximality.**  It is imposed in `N_k` through `i=iota_k(m)`.  It is used
+1. **Maximality.**  It is imposed in \(\mathcal N_k\) through
+   `i=iota_k(m)`.  It is used
    to place every selected high-excess triple among rank-five-screen
    survivors.  Proposition 2.1 deliberately makes no maximality claim.
 2. **Domains.**  Theorem 1.1 concerns only terminal integers in the fixed
