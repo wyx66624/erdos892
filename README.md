@@ -44,6 +44,9 @@ sequence is already primitive.
 - [`research/q1-star-surplus.md`](research/q1-star-surplus.md): exact
   valuation criterion for comparable immediate shadows, safe one-type deletions,
   exact conflict probabilities, and the remaining arbitrary-rank star problem.
+- [`research/q1-probabilistic-coloring.md`](research/q1-probabilistic-coloring.md):
+  local-state LLL criteria, post-LCA support reduction, coherent depthwise conflict
+  colouring, forced-0 extension tests, and a strict type-only barrier family.
 - [`research/q2-actual-union.md`](research/q2-actual-union.md): extended Q2 proof,
   actual-union interfaces, counterexamples, and reproducible finite experiments.
 - [`research/q2-maximal-swap-rank3.md`](research/q2-maximal-swap-rank3.md): exact
