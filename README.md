@@ -73,6 +73,9 @@ sequence is already primitive.
 - [`research/general-deadline-antichain.md`](research/general-deadline-antichain.md):
   fixed-dilation deadline margins, their weighted antichain dual, and an explicit
   integrality gap in the actual divisor poset `P_15`.
+- [`research/general-surplus-rounding.md`](research/general-surplus-rounding.md):
+  exact Laplace, width-saturation, Cantelli, and negative-association rounding
+  criteria, their König lift, and a strict infinite width-union-bound barrier.
 - [`archive/README.md`](archive/README.md): provenance and checksum of the supplied
   169-page partial-results manuscript.
 - [`archive/stage-2026-08-20.pdf`](archive/stage-2026-08-20.pdf): directly readable
