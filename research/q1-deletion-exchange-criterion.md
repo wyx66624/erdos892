@@ -2,7 +2,7 @@
 
 Date: 22 August 2026  
 Scope: the B24/B26 three-singleton-signature regime for a nine-member one-root star  
-Status: **paper draft for independent review; the nine-child theorem and universal HBC remain open**
+Status: **independently reviewed paper result; the nine-child theorem and universal HBC remain open**
 
 This note studies the one-member exchange left open by B26 when the deleted
 prime is allowed to change.  It has two purposes.
