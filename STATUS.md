@@ -20,7 +20,8 @@ dependency is independently audited.
 | B5 | Positive density at every scale \(2^{n_i}\) implies \(\sum_i1/n_i<\infty\). | proved | B3 plus disjoint shells |
 | B6 | The intended gcd-free condition means incomparable input pairs. | source-verified | Erdős–Sárközy–Szemerédi (1970), pp. 41–42 |
 | B7 | If \(\sum_n1/b_n<\infty\), then \((b_n)\) has a primitive dominator with an explicit constant. | independently proved and reviewed | elementary dyadic greedy construction |
-| L1 | `Primitive.image_of_reflects_dvd` in Lean. | formally checked when CI is green | Mathlib only |
+| L1 | `Primitive.image_of_reflects_dvd` in Lean. | formally checked | Lean CI run 16 |
+| L2 | Finite canonical top-half saturation for a fixed lower kernel. | formally checked and independently reviewed | PR 1; Lean CI run 16 |
 
 ## Candidate results from the supplied manuscript
 
