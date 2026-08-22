@@ -58,6 +58,9 @@ sequence is already primitive.
 - [`research/q2-maximal-swap-rank3.md`](research/q2-maximal-swap-rank3.md): exact
   coprime-swap maximality, actual-union multiplicity identities, fixed-rank bounds,
   and the first rank-three pair-count barrier.
+- [`research/q2-rank3-excess-screen.md`](research/q2-rank3-excess-screen.md):
+  low-source-excess rank-three erasure, the fixed rank-five promotion screen,
+  multiplicative-energy bookkeeping, anti-concentration targets, and strict shortcut barriers.
 - [`research/general-deadline-antichain.md`](research/general-deadline-antichain.md):
   fixed-dilation deadline margins, their weighted antichain dual, and an explicit
   integrality gap in the actual divisor poset `P_15`.
