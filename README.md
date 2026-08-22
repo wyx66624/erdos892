@@ -59,6 +59,9 @@ sequence is already primitive.
 - [`research/q1-six-child-star.md`](research/q1-six-child-star.md): saturation-bijection
   repair proving HBC for every one-root star with at most six children, with a
   strict full-blocking example that defeats fixed-assignment extension.
+- [`research/q1-eight-child-star.md`](research/q1-eight-child-star.md): support-transversal
+  saturation repair proving HBC for every one-root star with at most eight
+  children, and a sharp nine-member boundary for that repair mechanism.
 - [`research/q2-actual-union.md`](research/q2-actual-union.md): extended Q2 proof,
   actual-union interfaces, counterexamples, and reproducible finite experiments.
 - [`research/q2-maximal-swap-rank3.md`](research/q2-maximal-swap-rank3.md): exact
