@@ -118,7 +118,8 @@ Equivalently, \(|\psi^{-1}(d)|\le2\) for every \(d\). In particular, for every f
   \tag{1}
 \]
 
-The factor two is best possible.
+The integer fibre cap (equivalently, the number of types) two is best possible.
+This does not assert that the real coefficient (2) in (1) is optimal.
 
 **Proof, finite case.** Partition
 
@@ -155,7 +156,7 @@ This is pairwise non-coprime, every member has \(\Omega=3\), and
   \partial E^\star=\{p^2,q^2,r^2,pq,pr,qr\}.
 \]
 
-Hence \(|E^\star|=7>|\partial E^\star|=6\), so a one-type injective shadow map is impossible. Theorem 3.2 supplies two types, and therefore two is exact. If pairwise non-coprimality is removed, an arbitrarily large family of distinct primes has shadow \(\{1\}\), so no uniform fibre bound is possible.
+Hence \(|E^\star|=7>|\partial E^\star|=6\), so a one-type injective shadow map is impossible. Theorem 3.2 supplies two types, and therefore the minimum *integer fibre cap* is two.  The example supplies only the real ratio (7/6), not a proof that the coefficient (2) in (1) is optimal. If pairwise non-coprimality is removed, an arbitrarily large family of distinct primes has shadow \(\{1\}\), so no uniform fibre bound is possible.
 
 **COMPUTATION (sanity check only).** With \((p,q,r)=(2,3,5)\), a direct bipartite matching gives, among others,
 
@@ -332,7 +333,7 @@ Fix an envelope \(f:\mathbb N\to\mathbb N\), and let \(X_f\) be the space of all
 
 For an integer \(C\ge1\), let \(D_C\subseteq X_f\) consist of sequences having a primitive dominator with constant \(C\).
 
-**THEOREM 7.1 (Baire finite-obstruction dichotomy).** The space \(X_f\) is compact metrizable. Each \(D_C\) is closed. Consequently:
+**THEOREM 7.1 (Baire finite-obstruction dichotomy).** Assume (X_f\ne\varnothing). The space \(X_f\) is compact metrizable. Each \(D_C\) is closed. Consequently:
 
 1. If every member of \(X_f\) has some finite domination constant, then there are a finite admissible prefix \(Q\) and a constant \(C\) such that every member of \(X_f\) extending \(Q\) belongs to \(D_C\).
 2. If, for every nonempty prefix cylinder \([Q]\subseteq X_f\) and every \(C\), there is a longer extendible prefix \(Q'\) with no primitive \(C\)-witness, then the sequences in \(X_f\) having no primitive dominator form a comeagre, in particular nonempty, subset.
@@ -341,14 +342,24 @@ For an integer \(C\ge1\), let \(D_C\subseteq X_f\) consist of sequences having a
 
 If \(X_f=\bigcup_C D_C\), the Baire category theorem gives some \(D_C\) nonempty interior, which contains a prefix cylinder. This proves (1). Under the hypothesis of (2), every cylinder contains a smaller cylinder disjoint from \(D_C\), so every \(D_C\) is nowhere dense. Baire then shows that \(X_f\setminus\bigcup_C D_C\) is comeagre. ∎
 
-**BARRIER 7.2 (remote scaling destroys finite hardness).** Let \(B=(b_1<\cdots<b_N)\) be fixed, and let \(c(LB)\) be the least domination constant of the dilated tuple \((Lb_i)\). If \(p_N\) is the \(N\)-th prime, then
+**BARRIER 7.2 (remote scaling destroys finite hardness).** Let \(B=(b_1<\cdots<b_N)\) be fixed, and define the untruncated real distortion
 
 \[
-  c(LB)\le \max_i\frac{p_i}{Lb_i}
+ \widetilde c(B)=\inf\{C>0:\text{there is a primitive increasing }(a_i)_{i\le N}
+                    \text{ with }a_i\le Cb_i\}.
+\]
+
+If \(p_N\) is the \(N\)-th prime, then
+
+\[
+  \widetilde c(LB)\le \max_i\frac{p_i}{Lb_i}
           \le\frac{p_N}{Lb_1}\longrightarrow0.
 \]
 
 Thus placing isolated copies of a fixed finite certificate at remote scales cannot preserve, let alone amplify, its lower bound. A negative construction needs nested or density-preserving hard extensions of the kind appearing in Theorem 7.1. This explains rigorously why a finite certificate alone is not an infinite counterexample.
+Under the normalized convention (C\ge1), the corresponding quantity is
+\(\max\{1,\widetilde c(LB)\}\), which tends to (1), so the same construction still
+cannot amplify any obstruction above the trivial normalized floor.
 
 ## 8. Current bottleneck and proof-dependency chain
 
