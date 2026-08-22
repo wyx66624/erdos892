@@ -1,6 +1,6 @@
 # Erdős 892, Q2: an aggregate-block incidence-energy criterion
 
-**Draft status.**  This note does not prove the rank-three estimate and does
+**Reviewed paper status.**  This note does not prove the rank-three estimate and does
 not decide Q2.  It proves a sufficient first/second-moment criterion on the
 actual maximal, high-excess, rank-five-screen survivors.  It also sharpens the
 sparse-source boundary example: divergent source excess does not even force
@@ -54,8 +54,9 @@ Since \(m\notin\mathcal L_k\), its selected source has `tau_i(d)>H_k`;
 when `H_k>=4`,
 maximality and Proposition 3.1 of the excess-screen note imply that this
 selected triple survives every rank-five promotion block.  Thus every object
-below is already conditioned on full maximality and on rank-five-screen
-survival.
+in Section 1, and in particular every object entering Theorem 1.1, is already
+conditioned on full maximality and on rank-five-screen survival.  This scope
+does not include the non-maximal boundary family of Section 2.
 
 ## 1. A conditional incidence-energy lemma
 
@@ -168,9 +169,10 @@ a global unconditioned first moment.
 The little-`o` variance in (1.9) cannot be replaced merely by
 `E_s=O(I_s^2/M_s)`.  As a finite-array counterexample, take `M` even,
 `B_m=1` for all `m`, and let `A_m=1` on half the indices and `A_m=2R` on the
-other half.  Then `A_m>=B_m`, the mean is asymptotic to `R`, and
-`E/(I^2/M)->2`, but half the indices fail every threshold `A_m>=cR B_m`
-with fixed `c>0`.  This closes only a proof schema based on a global mean and
+other half, where `R -> infinity`.  Then `A_m>=B_m`, the mean is asymptotic
+to `R`, and `E/(I^2/M)->2`.  Taking the threshold parameter in (1.8) to be
+`R_k=R/4` makes (1.8) valid for all sufficiently large `R`, whereas half the
+indices still fail `A_m>=R_kB_m`.  This closes only a proof schema based on a global mean and
 a bounded relative second moment; it makes no claim that this abstract array
 is realized by divisor blocks.
 
