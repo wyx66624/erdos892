@@ -191,9 +191,13 @@ their arguments tend to infinity:
  \pi(x)-\pi(x/2)\gg\frac{x}{\log x}.
  \tag{AI2}
 \]
-Here the first line is Mertens' theorem and its dyadic consequence, the first
-estimate in (AI2) is the standard dyadic semiprime upper bound, and the last
-is the prime number theorem in dyadic intervals.  No prime theorem in an
+Here the first formula is Mertens' theorem.  The second is the standard
+dyadic prime-reciprocal estimate (for example, a consequence of the prime
+number theorem), the first estimate in (AI2) is the standard dyadic
+semiprime upper bound, and the last is the prime number theorem in dyadic
+intervals.  For completeness, the semiprime bound follows by writing
+$u=pq$ with $p\leq q$, applying the usual PNT upper bound to $q$ for each
+$p\leq\sqrt{2x}$, and then using Mertens' estimate.  No prime theorem in an
 interval shorter than a fixed positive proportion of its endpoint is used.
 
 \begin{proposition}[Moving-endpoint semiprime floor, modulo (AI1)--(AI2)]
@@ -221,14 +225,18 @@ $1\leq h\leq i$
   \qquad \log Z\asymp i(\log i)^2.
   \tag{1}
 \]
-Regular variation, uniformly for $ak\leq i\leq bk$, also gives a constant
-$\delta_{a,b}>0$ such that
+Regular variation, uniformly for $ak\leq i\leq bk$, gives
+\[
+ \frac{\log Y}{\log Z}
+ =\frac{n_k-n_i+O(1)}{n_{2i}-n_i+O(1)}
+ =\frac{k-i}{i}\bigl(1+o_{a,b}(1)\bigr).
+\]
+Since $(k-i)/i\geq(1-b)/b>1$, there is a constant
+$\delta_{a,b}>0$ such that, for all sufficiently large $k$,
 \[
   \frac{\log Y}{\log Z}\geq1+\delta_{a,b}.
   \tag{2}
 \]
-Indeed the leading ratio is
-$(k-i)/i\geq(1-b)/b>1$.
 
 Choose $0<\eta<\min\{1,\delta_{a,b}/2\}$ and put
 $P=Z^{\eta/2}$.  Let $\mathcal V$ be the products $u=pq$ of two distinct
@@ -333,36 +341,34 @@ identity.
 For a finite odd generator set $F$, write
 $E(F)=\{r\in\N_{\rm odd}:f\nmid r\text{ for every }f\in F\}$.
 
-\begin{corollary}[Finite-certificate interface; conditional]
-\label{cor:finite-certificate-conditional}
-Assume the finite-block reduction in the stage manuscript, including its
-$o(X_k)$ adjacent- and terminal-strip error estimates.  For every retained
-middle-anchor triple $(i,k,d)$, suppose that one can choose a finite
+\begin{remark}[Conditional actual-union proof interface]
+The stage manuscript proposes a finite-block reduction with adjacent- and
+terminal-strip errors $o(X_k)$.  That reduction has not been admitted as a
+theorem here.  To state its remaining target without a free index, let
+$\mathcal R_k$ denote the finite set of pairs $(i,d)$ retained by its
+maximal-anchor bookkeeping, where $i<k/2$ and $d\in(X_i/2,X_i]$ is odd.
+For each $(i,d)\in\mathcal R_k$, choose a finite
 \[
- F_{i,k,d}\subseteq\bigcup_hD_{i,h}(d)
+ F_{i,k,d}\subseteq\bigcup_{1\leq h\leq i}D_{i,h}(d).
 \]
-such that the corresponding actual maximal-anchor images satisfy
+The missing sufficient estimate inside that proposed reduction is
 \[
  \lim_{J\to\infty}\sup_{k>J}\frac1{X_k}
- \left|\bigcup_{\substack{i\geq J\\(i,d)\ \mathrm{retained}}}
- d\bigl(I_{Y_{i,k,d}}\cap E(F_{i,k,d})\bigr)\right|=o(1)
+ \left|\bigcup_{\substack{(i,d)\in\mathcal R_k\\i\geq J}}
+ d\bigl(I_{Y_{i,k,d}}\cap E(F_{i,k,d})\bigr)\right|=0.
+ \tag{AU}
 \]
-(equivalently, with the right-hand side written as $0$).  Then the
-logarithmic-barrier profile is admissible.
-\end{corollary}
-
-\begin{proof}
-An actual middle-anchor quotient avoids the full generator union and hence
-avoids its subset $F_{i,k,d}$, so its terminal value lies in the displayed
-actual union.  That union and the two assumed error strips are $o(X_k)$;
-the conditional stage reduction then leaves a fixed positive proportion of
-the terminal pool, which is precisely admissibility.
-\end{proof}
+An actual quotient avoids the full generator union and hence every selected
+subset $F_{i,k,d}$, so (AU), together with the two asserted $o(X_k)$ error
+estimates, is exactly the terminal estimate required by that conditional
+argument.  This paragraph records a proof interface; it neither proves (AU)
+nor promotes the unaudited finite-block reduction to a result of this paper.
+\end{remark}
 
 Lemma~\ref{lem:bonferroni-transfer} only transfers a finite certificate to
 the moving interval; it neither makes $\mathcal B_{2s}(F)$ small nor proves
-the actual-union hypothesis of Corollary~\ref{cor:finite-certificate-conditional}.
-Proposition~\ref{prop:semiprime-floor} rules out replacing that hypothesis by
+the actual-union estimate (AU).
+Proposition~\ref{prop:semiprime-floor} rules out replacing that estimate by
 a sum of unconditioned anchorwise bounds.  Thus neither admissibility nor
 inadmissibility of the logarithmic-barrier profile, and no solution of
 Problem~892, follows here.
