@@ -1,5 +1,6 @@
 module
 
+public import Erdos892.Basic
 public import Mathlib.Data.Finset.Interval
 public import Mathlib.Tactic
 
@@ -28,6 +29,16 @@ def IsPrimitive (A : Finset ℕ) : Prop :=
 upper-half integers which are not multiples of any member of `H`. -/
 def canonicalCompletion (M : ℕ) (H : Finset ℕ) : Finset ℕ :=
   H ∪ (Finset.Ioc M (2 * M)).filter (fun n => ∀ h ∈ H, ¬h ∣ n)
+
+/-- The finite predicate is exactly the restriction of the project's set-level
+notion of primitivity to the coercion of a finset. -/
+@[simp] theorem isPrimitive_iff_primitive_coe (A : Finset ℕ) :
+    IsPrimitive A ↔ Primitive (↑A : Set ℕ) := by
+  constructor
+  · intro h a b ha hb hab
+    exact h ha hb hab
+  · intro h a ha b hb hab
+    exact h ha hb hab
 
 private theorem upper_half_eq_of_dvd
     {M a b : ℕ}
