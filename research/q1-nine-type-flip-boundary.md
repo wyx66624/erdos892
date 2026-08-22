@@ -2,7 +2,7 @@
 
 Date: 22 August 2026  
 Scope: the B24 three-singleton-signature regime for a nine-member one-root star  
-Status: **research-branch draft; independent review required; the nine-child theorem and universal HBC remain open**
+Status: **complete paper boundary theorem, independently twice reviewed; the nine-child theorem and universal HBC remain open**
 
 This note makes two local advances at the first case beyond the audited
 eight-child theorem.
