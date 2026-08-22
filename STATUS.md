@@ -42,8 +42,8 @@ the PDF.
 1. **Quasi-primitive embedding.** Prove a uniform finite-prefix dilation bound for
    every historically quasi-primitive tuple, or construct a family whose required
    dilation constants diverge. B8 reduces every Hasse edge to a half-size shadow plus
-   one bit, but the parent, rank, and type labels still need a globally primitive
-   arithmetic encoding with one uniform constant. A finite obstruction alone is not
+   one bit, but the parent/type labels and cross-rank divisibility still need a
+   globally primitive arithmetic encoding with one uniform constant. A finite obstruction alone is not
    an infinite counterexample unless it is amplified without bounded recoding.
 2. **General domination.** Identify a cross-scale condition beyond the two classical
    scalar restrictions and consecutive dyadic load packing, then prove both
