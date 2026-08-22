@@ -32,14 +32,17 @@
 \maketitle
 
 \begin{abstract}
-We give a conservative research baseline for the two questions known as Erd\H{o}s
-Problem 892.  The purpose is not to claim a solution, but to separate elementary and
-published consequences from an extensive supplied partial-results manuscript whose
-new claims still require independent audit.  We prove the exact counting and compactness
-interfaces for domination, verify the historical meaning of the gcd-free special case,
-derive the harmonic obstruction for prescribed density scales, and state four precise
-remaining proof targets.  We also specify a branch and formalization protocol under
-which only gap-free, independently reviewed results may enter the main proof.
+We give an audited research baseline and two new partial advances for the questions
+known as Erd\H{o}s Problem 892.  We prove the exact counting and compactness interfaces,
+an explicit reciprocal-load sufficient condition for arbitrary source irregularity,
+and the harmonic obstruction for prescribed density scales.  For the quasi-primitive
+case we prove a mixed-rank two-shadow theorem and compress every Hasse palette by one
+prime deletion plus one abstract bit.  For the logarithmic-barrier density profile we
+prove a uniform semiprime lower bound which rules out unconditioned anchorwise
+saturation, and we give a period-free Bonferroni transfer lemma.  Strict counterexamples
+delimit the failed mechanisms.  These results have been independently audited, but the
+arithmetic label-erasure and maximal-anchor actual-union steps remain open; no solution
+of either characterization is claimed.
 \end{abstract}
 
 \section{The problem and its historical convention}
@@ -253,18 +256,19 @@ The 169-page stage manuscript \cite{Stage2026} explicitly states that it does no
 either characterization or the quasi-primitive special case.  It proposes many strong
 partial theorems.  The present project treats them as candidates rather than inherited
 facts until their hypotheses, analytic citations, and proofs are independently checked.
-The four terminal interfaces extracted from its dependency ledger are:
+The terminal interfaces extracted from its dependency ledger, sharpened by the audited
+results below, are:
 
 \begin{enumerate}
-\item for quasi-primitive inputs, either a universal bounded-dilation embedding or a
-      genuine divergent obstruction;
+\item for quasi-primitive inputs, an arithmetic erasure of the Hasse parent/rank/type
+      labels with uniformly bounded dilation, or a genuine divergent obstruction;
 \item a necessary-and-sufficient cross-scale condition for arbitrary domination beyond
       scalar and consecutive-load restrictions;
 \item a converse, or further obstruction, for exponent sequences satisfying harmonic,
       global, and uniform local crowding restrictions;
-\item an actual-union estimate for middle-anchor low-multiplier events in a terminal
-      short interval, where natural-density and raw second-moment methods are reported
-      to fail.
+\item an actual-union estimate after maximal-anchor conditioning for middle-anchor
+      low-multiplier events in a terminal short interval; the unconditioned supremum
+      and mean anchorwise estimates are proved below to be too large.
 \end{enumerate}
 
 The most concrete first-question finite target is the conjectural universal factor-two
@@ -273,6 +277,8 @@ prove the infinite assertion, but a uniform theorem would combine immediately wi
 Proposition~\ref{prop:compactness}.  Conversely, a single finite tuple requiring a
 constant greater than two would refute only the factor-two strengthening, not the
 original bounded-constant question.
+
+\input{audited_advances}
 
 \section{Proof dependency and admission criteria}
 
@@ -289,11 +295,14 @@ axioms.  None of these conditions is presently asserted to hold for the full pro
 
 \section{Conclusion}
 
-The exact historical problem remains open in this repository.  The contribution of this
-baseline is to fix the convention, prove the elementary reductions, pin the published
-necessary inputs, and expose the precise interfaces at which new mathematics is needed.
-Subsequent branch work will be promoted only when it strengthens this audited ledger
-without silently assuming one of the open interfaces.
+The exact historical problem remains open in this repository.  The audited advances
+show, on the first side, that every local quasi-primitive Hasse palette loses at most one
+binary type under an immediate-shadow compression and, on the second side, that a broad
+anchorwise saturation strategy cannot resolve the logarithmic barrier.  What remains is
+correspondingly precise: a globally primitive bounded-cost arithmetic encoding of the
+Hasse labels, and an actual-union estimate that exploits maximality or cross-anchor
+overlap.  Subsequent branch work will be promoted only when it strengthens this ledger
+without silently assuming either open interface.
 
 \bibliographystyle{plain}
 \bibliography{references}

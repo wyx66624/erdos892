@@ -20,6 +20,8 @@ dependency is independently audited.
 | B5 | Positive density at every scale \(2^{n_i}\) implies \(\sum_i1/n_i<\infty\). | proved | B3 plus disjoint shells |
 | B6 | The intended gcd-free condition means incomparable input pairs. | source-verified | Erdős–Sárközy–Szemerédi (1970), pp. 41–42 |
 | B7 | If \(\sum_n1/b_n<\infty\), then \((b_n)\) has a primitive dominator with an explicit constant. | independently proved and reviewed | elementary dyadic greedy construction |
+| B8 | Every finite or countable pairwise non-coprime palette admits an immediate-shadow map with fibres of size at most two; every quasi-primitive Hasse palette therefore has a half-size code with one abstract bit. | independently proved and reviewed | Katona's shadow theorem, Hall, and K\u00f6nig |
+| B9 | For the logarithmic barrier profile, every middle anchor has shifted-block avoidance mass \(\gg 1/i\); hence unconditioned supremum and mean anchorwise summation cannot close the construction. | independently proved modulo named standard analytic inputs | Mertens, dyadic semiprime bounds, dyadic PNT |
 | L1 | `Primitive.image_of_reflects_dvd` in Lean. | formally checked | Lean CI run 16 |
 | L2 | Finite canonical top-half saturation for a fixed lower kernel. | formally checked and independently reviewed | PR 1; Lean CI run 16 |
 
@@ -39,15 +41,18 @@ the PDF.
 
 1. **Quasi-primitive embedding.** Prove a uniform finite-prefix dilation bound for
    every historically quasi-primitive tuple, or construct a family whose required
-   dilation constants diverge. A finite obstruction alone is not an infinite
-   counterexample unless it is amplified without bounded recoding.
+   dilation constants diverge. B8 reduces every Hasse edge to a half-size shadow plus
+   one bit, but the parent, rank, and type labels still need a globally primitive
+   arithmetic encoding with one uniform constant. A finite obstruction alone is not
+   an infinite counterexample unless it is amplified without bounded recoding.
 2. **General domination.** Identify a cross-scale condition beyond the two classical
    scalar restrictions and consecutive dyadic load packing, then prove both
    directions.
 3. **Prescribed density scales.** Either control the actual terminal union of the
    middle-anchor low-multiplier events in the unresolved logarithmic profile, or
    exhibit a scale sequence satisfying all known local restrictions that is
-   nevertheless inadmissible.
+   nevertheless inadmissible. B9 rigorously rules out replacing this actual union by
+   an unconditioned anchorwise supremum or average.
 4. **Formalization.** Formalize the compactness interfaces first; analytic inputs are
    admitted only through precisely stated Mathlib theorems or proved modules.
 

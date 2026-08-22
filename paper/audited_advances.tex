@@ -1,0 +1,368 @@
+% Proposed insertion into paper/audited_baseline.tex.
+% It uses only the packages and theorem environments already present there.
+
+\section{Mixed-rank shadows for quasi-primitive Hasse palettes}
+
+For $m\geq1$ let $\Omega(m)=\sum_pv_p(m)$, let
+$\operatorname{supp}(m)=\{p:p\mid m\}$, and, for
+$E\subseteq\{2,3,\ldots\}$, put
+\[
+  \partial E=\{e/p:e\in E,\ p\text{ prime},\ p\mid e\}.
+\]
+We use the following published form of Katona's intersecting-shadow theorem:
+if $\mathcal F$ is a finite intersecting family of $s$-subsets, then
+\[
+  \card{\partial_{\rm set}\mathcal F}\geq\card{\mathcal F}.
+  \tag{KS}
+\]
+See \cite{Katona1964}; the more general statement in
+\cite[Theorem~1.3]{FranklKatona2021}, with $t=1$ and $\ell=s-1$, also gives
+(KS).  The case $s=1$ is immediate.  Notice that (KS) applies to every
+subfamily of an intersecting family.
+
+\begin{theorem}[Mixed-rank two-shadow map]\label{thm:mixed-two-shadow}
+Let $E\subseteq\{2,3,\ldots\}$ be finite or countable and satisfy
+$\gcd(e,f)>1$ for all distinct $e,f\in E$.  There are maps
+\[
+  \psi:E\longrightarrow\N,
+  \qquad \tau:E\longrightarrow\{0,1\},
+\]
+such that $e/\psi(e)$ is prime and
+\[
+  e\longmapsto(\psi(e),\tau(e))
+  \tag{MS}
+\]
+is injective.  Equivalently, one may choose an immediate multiplicative
+shadow of each member so that every integer is chosen at most twice.  Hence
+$\card G\leq2\card{\partial G}$ for every finite $G\subseteq E$.
+\end{theorem}
+
+\begin{proof}
+First suppose that $E$ is finite and all its members have the same value
+$\Omega(e)=k$.  Fix a support size $s$ and set
+\[
+  \mathcal A_s=\{\operatorname{supp}(e):e\in E,
+                  \ \card{\operatorname{supp}(e)}=s\}.
+\]
+This set family is intersecting.  By (KS), every
+$\mathcal G\subseteq\mathcal A_s$ satisfies
+$\card{\partial_{\rm set}\mathcal G}\geq\card{\mathcal G}$; Hall's
+theorem therefore gives an injection
+\[
+  T_s:\mathcal A_s\longrightarrow\partial_{\rm set}\mathcal A_s,
+  \qquad T_s(S)\subset S,
+  \qquad\card{S\setminus T_s(S)}=1.
+\]
+Let $q_s(S)$ be the unique prime in $S\setminus T_s(S)$ and define
+$\psi_s(e)=e/q_s(S)$ when $\operatorname{supp}(e)=S$.
+
+The map $\psi_s$ is injective on this support-size slice.  Indeed, if the
+deleted prime occurs in $e$ with exponent at least two, the support of the
+image is $S$; if it occurs with exponent one, the support of the image is
+$T_s(S)$.  Two images of the first kind determine the same $S$, and two of
+the second kind determine the same $S$ by injectivity of $T_s$; in either
+case the deleted prime and then $e$ are determined.  Images of the two kinds
+cannot coincide because their support sizes are $s$ and $s-1$.
+
+Now fix an output $d$ with support size $r$.  It can have a preimage only
+from the support-size $r$ slice, when a repeated prime was deleted, or from
+the support-size $r+1$ slice, when a prime disappeared.  Each slice supplies
+at most one preimage, so the combined map has fibres of size at most two.
+For a finite mixed-rank family, apply this construction separately to
+$E_k=\{e\in E:\Omega(e)=k\}$.  Its images all have rank $k-1$, so images
+coming from different $k$ do not meet.  Colour the at most two members of
+each fibre by $0$ and $1$ to obtain (MS).
+
+Finally let $E$ be countable.  Make a bipartite graph with left side $E$,
+right side $\N\times\{0,1\}$, and an edge
+$e\sim(d,t)$ exactly when $e/d$ is prime.  Every left degree is finite.
+The finite case verifies Hall's condition for every finite left subset.
+Matching each finite initial segment and applying K\"onig's infinity lemma
+to the resulting finitely branching tree gives a matching of all of $E$,
+which is (MS).  Restriction to a finite $G$ gives
+$\card G\leq2\card{\partial G}$.
+\end{proof}
+
+This theorem applies canonically to the local Hasse palettes of a
+quasi-primitive set.  In the divisibility poset induced by $B$, let
+$L_B(b)$ denote the lower covers of $b$.  Every nonminimal $b$ has such a
+cover because $b$ has only finitely many divisors.  Choose
+$\sigma(b)\in L_B(b)$ for every nonminimal $b$, let $R$ be the minimal
+members of $B$, and put
+\[
+  E_d=\{b/d:\sigma(b)=d\}.
+\]
+
+\begin{corollary}[Hasse palette compression]\label{cor:hasse-palette}
+If $B$ is finite or countable and quasi-primitive, every $E_d$ is primitive
+and pairwise non-coprime.  Moreover, there are maps
+$s:B\setminus R\to\N$ and $t:B\setminus R\to\{0,1\}$ such that
+\[
+  b\longmapsto(\sigma(b),s(b),t(b))
+  \quad\text{is injective},
+  \qquad
+  \sigma(b)s(b)=\frac{b}{p_b}\leq\frac b2
+  \tag{HC}
+\]
+for a prime $p_b\mid b/\sigma(b)$.
+\end{corollary}
+
+\begin{proof}
+If distinct $e_1,e_2\in E_d$ satisfied $e_1\mid e_2$, then
+$d<de_1<de_2$ and $d\mid de_1\mid de_2$, contrary to $d$ being a lower
+cover of $de_2$.  Thus $E_d$ is primitive.  If
+$\gcd(e_1,e_2)=1$, the preceding conclusion makes $de_1,de_2$
+incomparable, while
+$\gcd(de_1,de_2)=d\in B$, contradicting quasi-primitivity.  Apply
+Theorem~\ref{thm:mixed-two-shadow} to each $E_d$, and for $b=de$ set
+$s(b)=\psi_d(e)$ and $t(b)=\tau_d(e)$.  The parent label separates the
+palettes, (MS) gives injectivity within each palette, and deleting one prime
+gives (HC).
+\end{proof}
+
+The binary type in this statement is not a proof artefact.
+
+\begin{proposition}[Strict one-type obstruction]\label{prop:one-type-barrier}
+For distinct primes $p,q,r$, the family
+\[
+ E^\ast=\{qr^2,q^2r,pr^2,pqr,pq^2,p^2r,p^2q\}
+\]
+is primitive and pairwise non-coprime, but it has no injective map
+$\varphi:E^\ast\to\partial E^\ast$ with $e/\varphi(e)$ prime.
+\end{proposition}
+
+\begin{proof}
+All seven members have $\Omega=3$, so none divides another.  Their prime
+supports are the three two-element subsets of $\{p,q,r\}$, together with
+$\{p,q,r\}$, and hence meet pairwise.  Directly,
+\[
+  \partial E^\ast=\{p^2,q^2,r^2,pq,pr,qr\}.
+\]
+Thus an immediate-shadow injection would map seven objects into six.
+\end{proof}
+
+Proposition~\ref{prop:one-type-barrier} excludes every universal one-type
+immediate-shadow scheme; it does not show that the coefficient $2$ in the
+finite inequality is the best possible real constant.  More importantly,
+Corollary~\ref{cor:hasse-palette} is still only an \emph{abstract labelled}
+compression.  Shadow values from different ranks can be comparable (for
+example, the valid choices $6\mapsto2$ and $20\mapsto4$), and labels attached
+to different parents can collide.  The unproved step is a bounded-cost
+arithmetic erasure of the parent and type labels that leaves a primitive
+ordered sequence.  Consequently these results do not settle the
+quasi-primitive case of Problem~892.
+
+\section{Moving-endpoint avoidance at the logarithmic barrier}
+
+Consider the test profile
+\[
+ n_j=\left\lceil j+j(\log(j+1))^2\right\rceil,
+ \qquad X_j=2^{n_j}.
+\]
+For $i<k$, an odd $d\in(X_i/2,X_i]$, and $1\leq h\leq i$, put
+\[
+ Y=Y_{i,k,d}=X_k/d,
+ \qquad
+ D_{i,h}(d)=\left(X_{i+h}/(2d),X_{i+h}/d\right]
+                 \cap\N_{\rm odd},
+\]
+and define the unconditioned finite-block avoidance set
+\[
+ E^\square_{i,k}(d)=
+ \left\{r\in(Y/2,Y]\cap\N_{\rm odd}:
+ a\nmid r\ \text{for all }a\in\bigcup_{h\leq i}D_{i,h}(d)\right\}.
+ \tag{A}
+\]
+For a middle anchor $i<k/2$, this is the quotient set appearing in the
+maximal-old-divisor reduction of the stage manuscript, but (A) omits both
+maximal-anchor survival and terminal-pool rank conditions.
+
+The next result uses precisely these standard analytic inputs, uniformly as
+their arguments tend to infinity:
+\[
+ \sum_{p\leq x}\frac1p=\log\log x+O(1),\qquad
+ \sum_{x<p\leq2x}\frac1p\ll\frac1{\log(2x)},
+ \tag{AI1}
+\]
+\[
+ \sum_{\substack{x<u\leq2x\\\Omega(u)=2}}\frac1u
+ \ll\frac{\log\log(3x)}{\log(2x)},
+ \qquad
+ \pi(x)-\pi(x/2)\gg\frac{x}{\log x}.
+ \tag{AI2}
+\]
+Here the first line is Mertens' theorem and its dyadic consequence, the first
+estimate in (AI2) is the standard dyadic semiprime upper bound, and the last
+is the prime number theorem in dyadic intervals.  No prime theorem in an
+interval shorter than a fixed positive proportion of its endpoint is used.
+
+\begin{proposition}[Moving-endpoint semiprime floor, modulo (AI1)--(AI2)]
+\label{prop:semiprime-floor}
+Assume the named standard estimates (AI1)--(AI2).  Fix $0<a<b<1/2$.
+There is $c_{a,b}>0$ such that, for all sufficiently
+large $k$, all integers $i$ with $ak\leq i\leq bk$, and every odd
+$d\in(X_i/2,X_i]$,
+\[
+  \card{E^\square_{i,k}(d)}\geq c_{a,b}\frac{Y_{i,k,d}}i.
+  \tag{SF}
+\]
+\end{proposition}
+
+\begin{proof}
+Write $Z=X_{2i}/d$ and
+$\mathcal D=\bigcup_{h\leq i}D_{i,h}(d)$.  If
+$\Theta_h=X_{i+h}/(2d)$, then
+$D_{i,h}(d)=(\Theta_h,2\Theta_h]\cap\N_{\rm odd}$ and
+$\mathcal D\subset(1,Z]$.  The mean-value theorem applied to
+$x+x(\log(x+1))^2$, with the ceiling errors absorbed, gives uniformly for
+$1\leq h\leq i$
+\[
+  \log\Theta_h\asymp h(\log i)^2,
+  \qquad \log Z\asymp i(\log i)^2.
+  \tag{1}
+\]
+Regular variation, uniformly for $ak\leq i\leq bk$, also gives a constant
+$\delta_{a,b}>0$ such that
+\[
+  \frac{\log Y}{\log Z}\geq1+\delta_{a,b}.
+  \tag{2}
+\]
+Indeed the leading ratio is
+$(k-i)/i\geq(1-b)/b>1$.
+
+Choose $0<\eta<\min\{1,\delta_{a,b}/2\}$ and put
+$P=Z^{\eta/2}$.  Let $\mathcal V$ be the products $u=pq$ of two distinct
+odd primes $p,q\leq P$ for which none of $p,q,pq$ belongs to $\mathcal D$.
+By (AI1),
+\[
+ \sum_{\substack{p\leq P\\p\ \text{odd prime}}}\frac1p\asymp\log i.
+ \tag{3}
+\]
+On the other hand, (1), (AI1), and (AI2) imply
+\[
+ \sum_{h\leq i}\ \sum_{\Theta_h<p\leq2\Theta_h}\frac1p
+ \ll\frac1{\log i},
+ \tag{4}
+\]
+and
+\[
+ \sum_{h\leq i}\ \sum_{\substack{\Theta_h<u\leq2\Theta_h\\
+                                    \Omega(u)=2}}\frac1u
+ \ll\frac1{(\log i)^2}
+       \sum_{h\leq i}\frac{\log(3h(\log i)^2)}h
+ \ll1.
+ \tag{5}
+\]
+The reciprocal weight of all products of two distinct odd primes at most
+$P$ is $\asymp(\log i)^2$.  By (4), products for which one prime lies in
+$\mathcal D$ have total weight $O(1)$; by (5), the same is true for
+products which themselves lie in $\mathcal D$.  Therefore
+\[
+  \sum_{u\in\mathcal V}\frac1u\gg(\log i)^2.
+  \tag{6}
+\]
+
+For $u\in\mathcal V$ we have $u\leq Z^\eta$, so (2) gives
+$x_u:=Y/u\geq Z^{1+\delta_{a,b}/2}$.  In particular $x_u/2>Z$ for large
+$k$.  The dyadic prime number theorem in (AI2), together with
+$\log x_u\asymp_{a,b}\log Z$, supplies
+\[
+ \#\{s:Y/(2u)<s\leq Y/u,\ s\text{ prime}\}
+ \gg_{a,b}\frac{Y}{u\log Z}.
+ \tag{7}
+\]
+Every such $s$ exceeds $Z$.  Hence in $r=us$ the factor $u$ is exactly the
+part supported on primes at most $Z$, so representations belonging to
+different $u$ are distinct.  Any divisor of $r$ not exceeding $Z$ divides
+$u=pq$; its possibilities are $1,p,q,pq$, none of which lies in
+$\mathcal D$.  Thus every $r$ counted in (7) belongs to (A).  Summing (7)
+over $u$, and using (1) and (6), proves
+\[
+ \card{E^\square_{i,k}(d)}
+ \gg_{a,b}\frac{Y}{\log Z}(\log i)^2
+ \gg_{a,b}\frac Yi.
+\]
+\end{proof}
+
+It follows that the avoidance density for each middle anchor is at least
+$c_{a,b}/i$; consequently its sum over $ak\leq i\leq bk$ stays bounded
+away from zero.  Thus neither a supremum-over-$d$ anchorwise sum nor its
+unconditioned mean-over-$d$ analogue can yield $o(1)$.  This is a strict
+obstruction to that proof mechanism, not evidence that the profile is
+inadmissible: a terminal integer may be counted by many anchors, and the
+maximal-anchor and rank conditions omitted from (A) can change the actual
+union.
+
+We finally record a transfer lemma that does not require a full period of
+the least common multiple.  For $Y\geq3$ let
+$I_Y=(Y/2,Y]\cap\N_{\rm odd}$ and $N_Y=\card{I_Y}$.  If $F$ is a finite
+set of odd integers greater than one and $s\geq1$, define
+\[
+ \mathcal B_{2s}(F)=1+
+ \sum_{\substack{\varnothing\ne S\subseteq F\\\card S\leq2s}}
+ (-1)^{\card S}\frac1{\operatorname{lcm}(S)}.
+\]
+
+\begin{lemma}[Short-interval Bonferroni transfer]
+\label{lem:bonferroni-transfer}
+Uniformly in $Y,F,s$,
+\[
+ \frac1{N_Y}\card{\{r\in I_Y:f\nmid r\text{ for every }f\in F\}}
+ \leq \mathcal B_{2s}(F)
+ +O\!\left(\frac1Y\sum_{j=0}^{2s}\binom{\card F}{j}\right).
+ \tag{BF}
+\]
+If $2s\geq\card F$, inclusion--exclusion with the exact interval counts is
+an identity.
+\end{lemma}
+
+\begin{proof}
+For every odd $q\geq1$, direct counting gives, uniformly also for $q>Y$,
+\[
+ \frac1{N_Y}\card{\{r\in I_Y:q\mid r\}}=\frac1q+O(1/Y).
+ \tag{8}
+\]
+Apply the even Bonferroni upper bound to the complement of the union of the
+events $\{f\mid r\}$, $f\in F$.  The intersection indexed by
+$S\subseteq F$ is $\{\operatorname{lcm}(S)\mid r\}$.  Substitution of
+(8) in the retained terms yields (BF), since their number is
+$\sum_{j\leq2s}\binom{\card F}{j}$.  Keeping every term gives the stated
+identity.
+\end{proof}
+
+For a finite odd generator set $F$, write
+$E(F)=\{r\in\N_{\rm odd}:f\nmid r\text{ for every }f\in F\}$.
+
+\begin{corollary}[Finite-certificate interface; conditional]
+\label{cor:finite-certificate-conditional}
+Assume the finite-block reduction in the stage manuscript, including its
+$o(X_k)$ adjacent- and terminal-strip error estimates.  For every retained
+middle-anchor triple $(i,k,d)$, suppose that one can choose a finite
+\[
+ F_{i,k,d}\subseteq\bigcup_hD_{i,h}(d)
+\]
+such that the corresponding actual maximal-anchor images satisfy
+\[
+ \lim_{J\to\infty}\sup_{k>J}\frac1{X_k}
+ \left|\bigcup_{\substack{i\geq J\\(i,d)\ \mathrm{retained}}}
+ d\bigl(I_{Y_{i,k,d}}\cap E(F_{i,k,d})\bigr)\right|=o(1)
+\]
+(equivalently, with the right-hand side written as $0$).  Then the
+logarithmic-barrier profile is admissible.
+\end{corollary}
+
+\begin{proof}
+An actual middle-anchor quotient avoids the full generator union and hence
+avoids its subset $F_{i,k,d}$, so its terminal value lies in the displayed
+actual union.  That union and the two assumed error strips are $o(X_k)$;
+the conditional stage reduction then leaves a fixed positive proportion of
+the terminal pool, which is precisely admissibility.
+\end{proof}
+
+Lemma~\ref{lem:bonferroni-transfer} only transfers a finite certificate to
+the moving interval; it neither makes $\mathcal B_{2s}(F)$ small nor proves
+the actual-union hypothesis of Corollary~\ref{cor:finite-certificate-conditional}.
+Proposition~\ref{prop:semiprime-floor} rules out replacing that hypothesis by
+a sum of unconditioned anchorwise bounds.  Thus neither admissibility nor
+inadmissibility of the logarithmic-barrier profile, and no solution of
+Problem~892, follows here.

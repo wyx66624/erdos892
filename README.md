@@ -23,9 +23,17 @@ sequence is already primitive.
 - [`PROTOCOL.md`](PROTOCOL.md): rules for proof admission, counterexamples, and
   branch isolation.
 - [`paper/audited_baseline.tex`](paper/audited_baseline.tex): formal research note
-  containing the verified baseline and the exact unresolved interfaces.
+  containing the verified baseline, audited partial advances, counterexamples, and
+  exact unresolved interfaces.
+- [`paper/audited_advances.tex`](paper/audited_advances.tex): modular proofs of the
+  mixed-rank two-shadow theorem, Hasse-palette compression, the middle-anchor
+  semiprime floor, and the period-free Bonferroni transfer lemma.
 - [`paper/audited_baseline.pdf`](paper/audited_baseline.pdf): rendered version of
   that note.
+- [`research/q1-mixed-rank-shadow.md`](research/q1-mixed-rank-shadow.md): extended
+  Q1 proof, strict mechanism barriers, and live alternative routes.
+- [`research/q2-actual-union.md`](research/q2-actual-union.md): extended Q2 proof,
+  actual-union interfaces, counterexamples, and reproducible finite experiments.
 - [`archive/README.md`](archive/README.md): provenance and checksum of the supplied
   169-page partial-results manuscript.
 - [`Erdos892/Basic.lean`](Erdos892/Basic.lean): Lean definitions and foundational
