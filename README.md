@@ -76,6 +76,9 @@ sequence is already primitive.
 - [`research/q2-rank3-excess-screen.md`](research/q2-rank3-excess-screen.md):
   low-source-excess rank-three erasure, the fixed rank-five promotion screen,
   multiplicative-energy bookkeeping, anti-concentration targets, and strict shortcut barriers.
+- [`research/q2-source-local-block-decomposition.md`](research/q2-source-local-block-decomposition.md):
+  exact decomposition of rank-three multiplicity into at most eight source divisor
+  windows, a strict singleton-window barrier, and an aggregate-population sufficient target.
 - [`research/general-deadline-antichain.md`](research/general-deadline-antichain.md):
   fixed-dilation deadline margins, their weighted antichain dual, and an explicit
   integrality gap in the actual divisor poset `P_15`.
