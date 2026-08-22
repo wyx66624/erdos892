@@ -1,6 +1,7 @@
 module
 
 public import Erdos892.Basic
+public import Erdos892.Canonical
 
 /-!
 # Erdős Problem 892
