@@ -1,0 +1,24 @@
+Finite Gamma MILPs
+[2] Gamma= 0.5 counts= [2] status= Optimization terminated successfully. (HiGHS Status 7: Optimal)
+[2, 5] Gamma= 0.375 counts= [2, 12] status= Optimization terminated successfully. (HiGHS Status 7: Optimal)
+[2, 5, 9] Gamma= 0.287109375 counts= [2, 10, 147] status= Optimization terminated successfully. (HiGHS Status 7: Optimal)
+[2, 5, 9, 12] Gamma= 0.2578125 counts= [2, 9, 132, 1057] status= Optimization terminated successfully. (HiGHS Status 7: Optimal)
+[2, 4, 7, 10] Gamma= 0.2724609375 counts= [2, 5, 35, 279] status= Optimization terminated successfully. (HiGHS Status 7: Optimal)
+
+Shifted-block toy, gap=2, phase=0
+H= 1 Y= 64 avoidance= 0.625
+H= 2 Y= 256 avoidance= 0.546875
+H= 3 Y= 1024 avoidance= 0.47265625
+H= 4 Y= 4096 avoidance= 0.40234375
+H= 5 Y= 16384 avoidance= 0.35546875
+
+Bonferroni toy
+Y= 2048 generators= 21 exact= 0.4609375
+order= 2 model= 0.8524265227251779 actual_partial= 0.857421875
+order= 4 model= 0.6327842125400699 actual_partial= 0.544921875
+order= 6 model= 0.5026038098706169 actual_partial= 0.462890625
+order= 8 model= 0.465029868177803 actual_partial= 0.4609375
+
+Rank-band toy
+kind= half terminal_size= 137447 hit= 56602 fraction= 0.4118096429896615
+kind= band terminal_size= 161761 hit= 47956 fraction= 0.29646206440365724
