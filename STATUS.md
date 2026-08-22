@@ -25,6 +25,7 @@ dependency is independently audited.
 | B10 | Fixed-dilation deadline feasibility is exactly measured by an integer antichain margin; its one-point random relaxation has a weighted maximum-antichain dual. Prefix width is strictly weaker, and in the actual divisor poset \(P_{15}\) the random relaxation has value 1 while the integer margin is \(6/7\). | independently proved and twice reviewed | convex separation, Stanley chain polytope, explicit two-antichain and nine-chain certificates |
 | B11 | For the logarithmic barrier profile, maximality is exactly equivalent to avoidance by the full coprime size-rank swap spectrum. The actual union has exact deterministic-selector and reciprocal-multiplicity formulas; fixed quotient ranks at most 2 contribute \(o(X_k)\), while unweighted rank-3 candidate pairs remain \(\gg X_k\) even inside two-sided source/terminal \(\Omega\)-bands. | independently proved and twice reviewed modulo named analytic inputs | coprime-swap identity, Turán--Kubilius, fixed-rank Hardy--Ramanujan, odd dyadic Erdős--Kac, audited Q2.1 inputs |
 | B12 | Conditional on the hereditary batch condition (HBC), every quasi-primitive input admits an absolute-dilation primitive injection: a sparse two-prime reservoir absorbs all source factors, and a sublinear weighted batch-erasure lemma encodes the remaining binary shadow words. | independently proved and twice reviewed modulo dyadic PNT | absorption divisibility reflection, weighted primitive-batch erasure, binary-word growth bound, order statistics |
+| B13 | HBC holds whenever intrinsic-height edges admit prefix-synchronized deleted primes; it also holds for every one-root exact-\(\Omega\)-rank star. A canonical least-root selector triangularizes every core divisibility, and the maximal-node blocker and LLL criteria isolate the remaining exchange/probability estimates. | independently proved and twice reviewed | common-denominator cancellation, audited two-shadow theorem, finite-domain compactness, explicit strict examples |
 | L1 | `Primitive.image_of_reflects_dvd` in Lean. | formally checked | Lean CI run 16 |
 | L2 | Finite canonical top-half saturation for a fixed lower kernel. | formally checked and independently reviewed | PR 1; Lean CI run 16 |
 
@@ -53,7 +54,7 @@ the PDF.
    deleted-prime word within product budget is impossible for the alphabet
    \(\{2,3,5\}\), since \(1/2+1/3+1/5>1\). These close only those stated
    mechanisms. A finite obstruction is not an infinite counterexample unless it is
-   amplified without bounded recoding.
+   amplified without bounded recoding. B13 proves two complementary positive classes—prefix-synchronized intrinsic-height forests and exact-rank one-root stars—and a canonical-root triangularization, but no synchronization, exchange, or local-lemma estimate is yet known for every mixed-rank forest.
 2. **General domination.** Identify a cross-scale condition beyond the two classical
    scalar restrictions and consecutive dyadic load packing, then prove both
    directions.
