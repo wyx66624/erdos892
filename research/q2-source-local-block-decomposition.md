@@ -275,7 +275,7 @@ abstract law is realized by divisor blocks.
 
 ### Corollary 2.2 (an unranked block-population target)
 
-Uniformly for \(m\in C_k^{A,B}\),
+Uniformly for \(m\in\mathcal N_k^{A,B}\),
 
 \[
  1+D^+(m)=f_{i,3}(m)
@@ -298,8 +298,11 @@ A divisor of \(m\) having \(\Omega=3\) is obtained by choosing three prime
 occurrences from a labelled list of the \(\Omega(m)\) prime occurrences.
 The map from such triples to divisors may fail to be injective when primes
 repeat, but it is surjective.  Hence their number is at most
-\(\binom{\Omega(m)}3\).  Rank-three complements are in bijection with
-rank-three divisors of \(m\), so the first inequality follows.
+\(\binom{\Omega(m)}3\).  The map \(e\mapsto m/e\) injects the complements
+counted by \(f_{i,3}(m)\) into the divisors of \(m\) having \(\Omega=3\), so
+the first inequality follows.  Surjectivity is neither asserted nor needed,
+because an arbitrary rank-three divisor need not have its complementary
+factor in the pool \(C_i\).
 
 The terminal upper band gives
 
@@ -373,7 +376,7 @@ rank-three maximal representation for every surviving terminal integer.  The
 closest new target is to prove, for some \(R_k\to\infty\),
 
 \[
- \#\{m:\ Q^+(m)<R_k(1+D^+(m))\}=o(X_k).
+ \#\{m\in\mathcal N_k^{A,B}:\ Q^+(m)<R_k(1+D^+(m))\}=o(X_k).
  \tag{5.1}
 \]
 
