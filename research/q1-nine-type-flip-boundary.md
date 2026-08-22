@@ -9,9 +9,12 @@ eight-child theorem.
 
 First, in the B24 three-singleton-signature regime the five selected blockers
 are not merely representatives: each is the unique blocker of its option.
-Consequently a one-member exchange succeeds exactly when the changed old
+Consequently a one-member exchange succeeds whenever the changed old
 assignment remains successful and the changed member ceases to block its old
-option.
+option.  Conversely, for this fixed local move, both conditions are necessary:
+restriction of a successful full assignment to `F` remains successful, and a
+member still blocking the inserted option would leave a same-type comparable
+pair.
 
 Second, the apparently canonical exchange for the `(2,0)` blocker—keep its
 deleted prime and change only its type from `0` to `1`—is not universally
@@ -100,10 +103,10 @@ of `h_{2,0}` from `0` to `1` is an admissible state change.
 
 #### Proof
 
-The relation `e/2 | h_{2,0}/d`, together with incomparability of `e` and
-`h_{2,0}`, invokes the exact immediate-shadow comparability lemma: `2` is the
-fragile surplus of `e` over `h_{2,0}` and `d` belongs to `D(h_{2,0},e)`.
-In particular `d != 2`; therefore `d` is odd.  ∎
+If `d=2`, then `e/2 | h_{2,0}/2` would imply `e | h_{2,0}`, contradicting
+primitivity of the palette.  Hence `d != 2`, so the prime `d` is odd.  (This is
+also the `p != q` conclusion of the exact immediate-shadow comparability
+lemma.)  ∎
 
 Corollary 1.2 does **not** say that the resulting old assignment stays
 successful.  The next section proves that this missing condition is real.
@@ -181,22 +184,30 @@ family is not an HBC obstruction.
 
 #### Proof
 
-Every member other than `e` omits at least one of `a,b,c`, so `e` divides no
-old member.  Conversely, each of `A,B0,B1,C0,C1` contains its private prime
-`d_*`, `G_a` contains the private prime `y`, and `G_c` contains the private
-prime `d_C`.  The only remaining possible divisibility needing attention is
-`G_b | A`, but `G_b` contains `b^2` whereas `A` contains only `b`.  Directly
-comparing the displayed supports excludes every other old-old divisibility.
-Thus `E` is primitive.  Also `Omega(e)=3`, while every old member has total
-rank at least `3`, so `e` has minimum rank.
+Every blocker in `A,B0,B1,C0,C1` contains a private prime `d_*`, so no blocker
+divides any other member.  Conversely, `e` does not divide a blocker because
+each blocker omits one of `a,b,c`; `G_a` does not divide a blocker because its
+private prime `y` is absent there; and `G_c` does not divide a blocker because
+its private prime `d_C` is absent there.  The member `G_b` does not divide `A`
+because it contains `b^2` while `A` contains only `b`; it does not divide
+`B0,B1` because they omit `b`; and it does not divide `C0,C1` because they
+omit `z,u,v`.  Thus there is no divisibility involving a blocker.
+
+Among `e,G_a,G_b,G_c`, the member `e` cannot divide an extra because every
+extra meets `{a,b,c}` in a singleton, while no extra divides `e` because it
+has an auxiliary prime (and `G_b` also has exponent two at `b`).  Finally
+`G_a` has `a,y`, `G_b` has `b,u,v`, and `G_c` has `c,w,x,d_C`, providing a
+missing prime in both directions for each pair of extras.  Hence this
+four-member subfamily is primitive, and therefore so is `E`.  Also
+`Omega(e)=3`, while every old member has total rank at least `3`, so `e` has
+minimum rank.
 
 Pairwise non-coprimality can be read from the construction.  The five
 blockers meet one another through the two support primes they inherit from
 `e`.  The extra `G_b` meets `A,C0,C1` at `b`, meets `B0` at `u`, and meets
 `B1` at `v`.  The extra `G_a` meets `B0,B1,C0,C1` at `a` and meets `A` at
 `z`.  The extra `G_c` meets `A,B0,B1` at `c`, meets `C0` at `w`, and meets
-`C1` at `x`.  Finally all three extras meet pairwise at `z` whenever one is
-`G_a` or `G_b`, while `G_b` and `G_c` also meet at `z`.  Every old member
+`C1` at `x`.  Finally all three extras meet pairwise at `z`.  Every old member
 meets `e` in its displayed singleton or two-element support signature.
 
 The type-`0` shadows of the proposed old assignment have supports
