@@ -68,6 +68,9 @@ sequence is already primitive.
 - [`research/q1-nine-type-flip-boundary.md`](research/q1-nine-type-flip-boundary.md):
   unique blockers in the three-singleton regime and a parametric strict barrier to
   the pure `(2,0)` type flip, with an explicit deletion-change repair.
+- [`research/q1-deletion-exchange-criterion.md`](research/q1-deletion-exchange-criterion.md):
+  the exact valuation criterion for a one-state deletion/exchange, plus an infinite
+  family excluding every same-type deletion-only repair of one blocker.
 - [`research/q2-actual-union.md`](research/q2-actual-union.md): extended Q2 proof,
   actual-union interfaces, counterexamples, and reproducible finite experiments.
 - [`research/q2-maximal-swap-rank3.md`](research/q2-maximal-swap-rank3.md): exact
@@ -79,6 +82,9 @@ sequence is already primitive.
 - [`research/q2-source-local-block-decomposition.md`](research/q2-source-local-block-decomposition.md):
   exact decomposition of rank-three multiplicity into at most eight source divisor
   windows, a strict singleton-window barrier, and an aggregate-population sufficient target.
+- [`research/q2-aggregate-block-energy.md`](research/q2-aggregate-block-energy.md):
+  a binned incidence-energy sufficient condition on maximal screen survivors, a
+  bounded-second-moment barrier, and a sparse high-excess family with `Q^+<=1`.
 - [`research/general-deadline-antichain.md`](research/general-deadline-antichain.md):
   fixed-dilation deadline margins, their weighted antichain dual, and an explicit
   integrality gap in the actual divisor poset `P_15`.
@@ -89,6 +95,9 @@ sequence is already primitive.
   an explicit true-divisor-poset gap `rho_9=8/9<22/21=rho_9^*`, extended by one
   projection-consistent random primitive-set witness to every later prime deadline;
   this strictly rules out pure first-moment surplus rounding at fixed dilation.
+- [`research/general-conditional-na-rounding.md`](research/general-conditional-na-rounding.md):
+  exact finite rounding for mixtures of conditionally NA phases, a bounded-drift
+  criterion and König lift, and the strict phase-imbalance boundary from B25.
 - [`archive/README.md`](archive/README.md): provenance and checksum of the supplied
   169-page partial-results manuscript.
 - [`archive/stage-2026-08-20.pdf`](archive/stage-2026-08-20.pdf): directly readable
