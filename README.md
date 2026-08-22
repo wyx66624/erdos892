@@ -35,6 +35,9 @@ sequence is already primitive.
 - [`research/q1-absorbed-hbc.md`](research/q1-absorbed-hbc.md): conditional
   HBC-to-primitive theorem, arithmetic label absorption, weighted batch erasure, and
   strict fixed-selector and full-prime-word barriers.
+- [`research/q1-hbc-positive-criteria.md`](research/q1-hbc-positive-criteria.md):
+  intrinsic-height prefix synchronization, exact-rank star HBC, canonical-root
+  triangularization, blocker induction, LLL criteria, and strict boundary examples.
 - [`research/q2-actual-union.md`](research/q2-actual-union.md): extended Q2 proof,
   actual-union interfaces, counterexamples, and reproducible finite experiments.
 - [`research/q2-maximal-swap-rank3.md`](research/q2-maximal-swap-rank3.md): exact
