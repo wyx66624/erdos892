@@ -23,6 +23,7 @@ dependency is independently audited.
 | B8 | Every finite or countable pairwise non-coprime palette admits an immediate-shadow map with fibres of size at most two; every quasi-primitive Hasse palette therefore has a half-size code with one abstract bit. | independently proved and reviewed | Katona's shadow theorem, Hall, and K\u00f6nig |
 | B9 | For the logarithmic barrier profile, every middle anchor has shifted-block avoidance mass \(\gg 1/i\); hence unconditioned supremum and mean anchorwise summation cannot close the construction. | independently proved modulo named standard analytic inputs | Mertens, dyadic semiprime bounds, dyadic PNT |
 | B10 | Fixed-dilation deadline feasibility is exactly measured by an integer antichain margin; its one-point random relaxation has a weighted maximum-antichain dual. Prefix width is strictly weaker, and in the actual divisor poset \(P_{15}\) the random relaxation has value 1 while the integer margin is \(6/7\). | independently proved and twice reviewed | convex separation, Stanley chain polytope, explicit two-antichain and nine-chain certificates |
+| B11 | For the logarithmic barrier profile, maximality is exactly equivalent to avoidance by the full coprime size-rank swap spectrum. The actual union has exact deterministic-selector and reciprocal-multiplicity formulas; fixed quotient ranks at most 2 contribute \(o(X_k)\), while unweighted rank-3 candidate pairs remain \(\gg X_k\) even inside two-sided source/terminal \(\Omega\)-bands. | independently proved and twice reviewed modulo named analytic inputs | coprime-swap identity, Turán--Kubilius, fixed-rank Hardy--Ramanujan, odd dyadic Erdős--Kac, audited Q2.1 inputs |
 | L1 | `Primitive.image_of_reflects_dvd` in Lean. | formally checked | Lean CI run 16 |
 | L2 | Finite canonical top-half saturation for a fixed lower kernel. | formally checked and independently reviewed | PR 1; Lean CI run 16 |
 
@@ -57,6 +58,9 @@ the PDF.
    exhibit a scale sequence satisfying all known local restrictions that is
    nevertheless inadmissible. B9 rigorously rules out replacing this actual union by
    an unconditioned anchorwise supremum or average.
+   B11 reduces the first unsolved quotient layer to rank 3 and separates two exact
+   targets: a deterministic selector sum and a symmetric `1/nu` maximal-anchor mass.
+   Neither target has yet been shown to be `o(X_k)`.
 4. **Formalization.** Formalize the compactness interfaces first; analytic inputs are
    admitted only through precisely stated Mathlib theorems or proved modules.
 

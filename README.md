@@ -34,6 +34,9 @@ sequence is already primitive.
   Q1 proof, strict mechanism barriers, and live alternative routes.
 - [`research/q2-actual-union.md`](research/q2-actual-union.md): extended Q2 proof,
   actual-union interfaces, counterexamples, and reproducible finite experiments.
+- [`research/q2-maximal-swap-rank3.md`](research/q2-maximal-swap-rank3.md): exact
+  coprime-swap maximality, actual-union multiplicity identities, fixed-rank bounds,
+  and the first rank-three pair-count barrier.
 - [`research/general-deadline-antichain.md`](research/general-deadline-antichain.md):
   fixed-dilation deadline margins, their weighted antichain dual, and an explicit
   integrality gap in the actual divisor poset `P_15`.
