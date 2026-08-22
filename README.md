@@ -50,6 +50,9 @@ sequence is already primitive.
 - [`research/q1-hbc-countersearch.md`](research/q1-hbc-countersearch.md): exact finite
   HBC decision theorem, the proved `|B|<=4` positive boundary, a strict failure of the
   numerical-minimum-cover selector, and reproducible exhaustive/sampled searches.
+- [`research/q1-hbc-five-point.md`](research/q1-hbc-five-point.md): a
+  non-computational proof that every quasi-primitive set of at most five elements—and
+  every intrinsic-height selector on it—admits HBC.
 - [`research/q2-actual-union.md`](research/q2-actual-union.md): extended Q2 proof,
   actual-union interfaces, counterexamples, and reproducible finite experiments.
 - [`research/q2-maximal-swap-rank3.md`](research/q2-maximal-swap-rank3.md): exact
