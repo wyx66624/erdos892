@@ -65,6 +65,9 @@ sequence is already primitive.
 - [`research/q1-nine-star-reduction.md`](research/q1-nine-star-reduction.md): the
   exact three-singleton-signature structure forced on every hypothetical
   nine-member star obstruction, leaving a quantified exchange problem.
+- [`research/q1-nine-type-flip-boundary.md`](research/q1-nine-type-flip-boundary.md):
+  unique blockers in the three-singleton regime and a parametric strict barrier to
+  the pure `(2,0)` type flip, with an explicit deletion-change repair.
 - [`research/q2-actual-union.md`](research/q2-actual-union.md): extended Q2 proof,
   actual-union interfaces, counterexamples, and reproducible finite experiments.
 - [`research/q2-maximal-swap-rank3.md`](research/q2-maximal-swap-rank3.md): exact
