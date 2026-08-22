@@ -15,5 +15,10 @@ jobs:
       - uses: leanprover/lean-action@v1
         with:
           build: true
-          axiom-audit: true
-          axiom-audit-root: Erdos892
+      - name: Reject placeholders and project axioms
+        shell: bash
+        run: |
+          if grep -R -n -E '\b(sorry|admit|axiom)\b' --include='*.lean' Erdos892.lean Erdos892; then
+            echo 'Lean placeholders or project-defined axioms are forbidden.' >&2
+            exit 1
+          fi
