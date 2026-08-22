@@ -11,6 +11,8 @@ Foundational definitions for Erdős Problem 892.  The definition of
 tested for a gcd that is another source element.
 -/
 
+@[expose] public section
+
 open Set
 
 namespace Erdos892
@@ -35,7 +37,9 @@ theorem primitive_range_iff {ι : Type*} (u : ι → ℕ) :
   constructor
   · intro h i j hij
     exact h ⟨i, rfl⟩ ⟨j, rfl⟩ hij
-  · rintro h _ ⟨i, rfl⟩ _ ⟨j, rfl⟩ hij
+  · intro h m n hm hn hij
+    rcases hm with ⟨i, rfl⟩
+    rcases hn with ⟨j, rfl⟩
     exact h i j hij
 
 theorem Primitive.quasiPrimitive {A : Set ℕ} (hA : Primitive A) :
@@ -51,7 +55,9 @@ theorem Primitive.image_of_reflects_dvd {A : Set ℕ} {f : ℕ → ℕ}
     (hA : Primitive A)
     (hreflect : ∀ ⦃m n : ℕ⦄, m ∈ A → n ∈ A → f m ∣ f n → m ∣ n) :
     Primitive (f '' A) := by
-  rintro _ ⟨m, hm, rfl⟩ _ ⟨n, hn, rfl⟩ hdiv
+  intro x y hx hy hdiv
+  rcases hx with ⟨m, hm, rfl⟩
+  rcases hy with ⟨n, hn, rfl⟩
   exact congrArg f (hA hm hn (hreflect hm hn hdiv))
 
 /-- Existence of a primitive sequence obeying one uniform multiplicative deadline. -/
