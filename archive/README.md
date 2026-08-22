@@ -2,18 +2,19 @@
 
 The user supplied a 169-page PDF entitled *Dominating Primitive Sequences and
 Prescribed Density Scales — Partial Results on Erdős Problem 892*, dated 20 August
-2026. The exact file is stored in two byte-for-byte chunks so that the authenticated
-repository API can transfer it without truncation. Reconstruct and verify it with:
+2026. The exact, directly readable file is stored as
+[`stage-2026-08-20.pdf`](stage-2026-08-20.pdf). Its SHA-256 digest is:
+
+```text
+ac512391c742f62155191c32a277c0bc953917c049a2e4cd1a7e01cf93a94544
+```
+
+The two original byte-for-byte chunks are retained as a transfer fallback. They can
+be reconstructed and verified with:
 
 ```bash
 cat archive/stage-2026-08-20.pdf.part-* > stage-2026-08-20.pdf
 sha256sum stage-2026-08-20.pdf
-```
-
-The reconstructed PDF's SHA-256 digest is:
-
-```text
-ac512391c742f62155191c32a277c0bc953917c049a2e4cd1a7e01cf93a94544
 ```
 
 The chunk digests are:

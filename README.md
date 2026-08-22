@@ -36,6 +36,9 @@ sequence is already primitive.
   actual-union interfaces, counterexamples, and reproducible finite experiments.
 - [`archive/README.md`](archive/README.md): provenance and checksum of the supplied
   169-page partial-results manuscript.
+- [`archive/stage-2026-08-20.pdf`](archive/stage-2026-08-20.pdf): directly readable
+  copy of that supplied manuscript; it is preserved as a partial-results source, not
+  admitted wholesale as a proof.
 - [`Erdos892/Basic.lean`](Erdos892/Basic.lean): Lean definitions and foundational
   recoding lemmas, with no `sorry` or project axioms.
 
