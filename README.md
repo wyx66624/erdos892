@@ -41,6 +41,9 @@ sequence is already primitive.
 - [`research/q1-rank-slack.md`](research/q1-rank-slack.md): a strict
   fixed-data relaxation of HBC via primitive terminal-rank layers paid by unused
   deletion slack, with an exact universal chain-rank target.
+- [`research/q1-star-surplus.md`](research/q1-star-surplus.md): exact
+  valuation criterion for comparable immediate shadows, safe one-type deletions,
+  exact conflict probabilities, and the remaining arbitrary-rank star problem.
 - [`research/q2-actual-union.md`](research/q2-actual-union.md): extended Q2 proof,
   actual-union interfaces, counterexamples, and reproducible finite experiments.
 - [`research/q2-maximal-swap-rank3.md`](research/q2-maximal-swap-rank3.md): exact
