@@ -88,7 +88,8 @@ comparability, so injectivity requires no separate clause.  ∎
 
 ## 2. Exact one-state exchange
 
-Let `E=F union {e}` be a nine-member palette in the B24 situation.  Thus
+Let `E=F union {e}` be a nine-member palette in the B24 situation, with `e`
+a minimum-`Omega` member.  Thus
 
 ```
 supp(e)={2,p,q}
@@ -102,6 +103,10 @@ Fix one state `(s,t)` of `e`, let `h` be its unique blocker, and suppose the
 old state of `h` is `(d,t)`.  (A blocker necessarily has the same type as the
 blocked option.)  For a new admissible state `(r,u)` of `h`, let
 `A[h -> (r,u)]` denote the assignment obtained by changing only `h`.
+
+The minimum-rank blocker orientation is part of the audited B22/B24
+interface: equality counts as comparability, and every blocked option is
+oriented as `e/s | h/d`.
 
 ### Theorem 2.1 (exact one-state exchange criterion)
 
