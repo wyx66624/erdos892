@@ -37,6 +37,7 @@ dependency is independently audited.
 | B22 | Every primitive pairwise non-coprime quotient palette `E subset Z_{>=2}` with at most eight members admits weighted immediate-shadow choices whose two type classes are injective and primitive. After one blocker is selected per saturated option, any two support primes cover all blockers; at most two extras have a two-point support transversal. A nine-member family strictly defeats this two-prime-cover repair but has an explicit one-change HBC repair. | independently proved and twice reviewed | strong induction from B20/B21, support-transversal saturation lemma, two-prime common-denominator repair, symbolic nine-member certificate |
 | B23 | A finite fractional deadline-antichain witness rounds to an integer antichain under an exact rational Laplace budget; separate width-saturation, Cantelli, and negative-association surplus criteria follow. Uniform NA surplus plus a finite early-safe window lifts by König to infinite domination. Directly summing the width-saturation bounds for all prefixes would force `b_i` to be linear and violate the classical reciprocal-log necessary condition. | independently proved and twice reviewed | Markov/Cantelli inequalities, exact divisor-poset width, negative association, geometric tail bound, König compactness, B10 deadline model |
 | B24 | Any nine-member one-root palette obstruction must have every minimum-`Omega` member supported on `{2,p,q}`. For every successful assignment on its eight-member deletion and every blocker-representative choice, all five options are saturated and the three extras have exactly the singleton signatures `{2}`, `{p}`, `{q}`. This is a necessary-structure theorem, not a nine-member solution. | independently proved and twice reviewed | B22 eight-member theorem, blocker orientation, saturated support-transversal repair, exact three-subset transversal lemma |
+| B25 | In the true divisor poset with deadlines `(3,9,10,13,14,15,19,20,21)`, the integer margin is `8/9` while the fractional margin is `22/21`. The same projection-consistent three-point distribution extends along prime deadlines with `rho_N^*>=22/21` for every `N`, while `rho_N<=8/9` for every `N>=9`. Thus uniform positive first-moment surplus at a fixed dilation is strictly insufficient for integer rounding. | independently proved and twice reviewed | explicit chain covers, three-antichain witness, weighted dual certificate, prime extension |
 | L1 | `Primitive.image_of_reflects_dvd` in Lean. | formally checked | Lean CI run 16 |
 | L2 | Finite canonical top-half saturation for a fixed lower kernel. | formally checked and independently reviewed | PR 1; Lean CI run 16 |
 
@@ -76,14 +77,16 @@ the PDF.
    directions.
    B10 closes only the claim that the complete chain polytope remains integral after
    direct intersection with nested deadline lower bounds; extended formulations and
-   all-constant obstructions remain open. B23 now supplies four rigorous surplus-rounding
-   interfaces (rational Laplace budgets, width saturation, Cantelli variance control,
-   and negative association) and a König lift. Its exact remaining gaps are to derive a
-   uniform positive fractional surplus from arithmetic hypotheses, construct NA or
-   directly Laplace-controlled witnesses without losing that surplus, and make one
-   finite early-safe window compatible with all later prefixes. B23 also strictly rules
-   out only the strategy of summing the width-saturation failure bound over every
-   prefix; block, stopping-time, and correlated approaches remain open.
+   all-constant obstructions remain open. B23 supplies four rigorous surplus-rounding interfaces (rational Laplace budgets,
+   width saturation, Cantelli variance control, and negative association) and a König
+   lift. B25 now proves that even a projection-consistent uniform positive fractional
+   surplus is insufficient at a fixed dilation: an explicit true-divisor-poset family
+   has `rho_N^*>=22/21` for every prefix but `rho_N<=8/9` from depth nine onward.
+   Therefore the remaining rounding target must derive structured surplus—NA,
+   Laplace-controlled, stopping-time, block-correlated, or another condition excluding
+   the certified phase split—and a compatible finite early-safe window. B23 separately
+   rules out only summing width-saturation failures over every prefix; enlarged
+   dilation, block, stopping-time, and correlated approaches remain open.
 3. **Prescribed density scales.** Either control the actual terminal union of the
    middle-anchor low-multiplier events in the unresolved logarithmic profile, or
    exhibit a scale sequence satisfying all known local restrictions that is
