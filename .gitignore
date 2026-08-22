@@ -1,2 +1,10 @@
 # cache and other artifacts produced by Lean's Lake build tool
 .lake/
+
+# LaTeX build products (the reviewed PDF itself is tracked)
+paper/build/
+
+# Local experiment output
+tmp/
+__pycache__/
+*.pyc

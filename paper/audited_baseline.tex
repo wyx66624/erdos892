@@ -1,0 +1,229 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage{booktabs}
+\usepackage{enumitem}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{question}[theorem]{Question}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\N}{\mathbb N}
+\newcommand{\card}[1]{\lvert #1\rvert}
+
+\hypersetup{
+  pdftitle={An Audited Baseline and Proof Interfaces for Erdos Problem 892},
+  pdfauthor={Erdos 892 Research Group},
+  pdfsubject={Primitive sequences and prescribed density scales}
+}
+
+\title{An Audited Baseline and Proof Interfaces for Erd\H{o}s Problem 892}
+\author{Erd\H{o}s 892 Research Group}
+\date{22 August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We give a conservative research baseline for the two questions known as Erd\H{o}s
+Problem 892.  The purpose is not to claim a solution, but to separate elementary and
+published consequences from an extensive supplied partial-results manuscript whose
+new claims still require independent audit.  We prove the exact counting and compactness
+interfaces for domination, verify the historical meaning of the gcd-free special case,
+derive the harmonic obstruction for prescribed density scales, and state four precise
+remaining proof targets.  We also specify a branch and formalization protocol under
+which only gap-free, independently reviewed results may enter the main proof.
+\end{abstract}
+
+\section{The problem and its historical convention}
+
+A set $A\subseteq\N$ is \emph{primitive} if no two distinct members divide one
+another.  Write $A(x)=\card{A\cap[1,x]}$.
+
+\begin{question}[Domination]
+For which strictly increasing integer sequences $b_1<b_2<\cdots$ do there exist a
+primitive sequence $a_1<a_2<\cdots$ and $C<\infty$ such that
+\[
+  a_n\le Cb_n\qquad(n\ge1)?
+\]
+\end{question}
+
+\begin{question}[Prescribed density scales]
+For which strictly increasing exponent sequences $n_1<n_2<\cdots$ do there exist a
+primitive set $A$ and $c>0$ such that
+\[
+  A(2^{n_i})\ge c2^{n_i}\qquad(i\ge1)?
+\]
+\end{question}
+
+The original conference paper states the special hypothesis
+$\gcd(b_i,b_j)\ne b_r$ only for incomparable $b_i,b_j$
+\cite[pp.~41--42]{ESS1970}.  We therefore make the following definition.
+
+\begin{definition}
+A set $B\subseteq\N$ is \emph{quasi-primitive} if
+\[
+ x,y,d\in B,\quad x\nmid y,\quad y\nmid x
+ \quad\Longrightarrow\quad \gcd(x,y)\ne d.
+\]
+\end{definition}
+
+If the phrase ``no non-trivial solution'' were instead read as excluding every gcd
+identity except $i=j=r$, then $b_i\mid b_j$ for $i\ne j$ would already be impossible,
+so $B$ itself would be primitive.  That literal reading makes the special case trivial
+and is not the historical question.
+
+\section{Exact domination interfaces}
+
+Let $B(x)=\card{\{n:b_n\le x\}}$.
+
+\begin{proposition}[Counting formulation]\label{prop:counting}
+For an increasing sequence $A=\{a_1<a_2<\cdots\}$ and fixed $C\ge1$, the following
+are equivalent:
+\begin{enumerate}[label=(\alph*)]
+\item $a_n\le Cb_n$ for every $n$;
+\item $A(Cx)\ge B(x)$ for every real $x\ge1$;
+\item $A(Cb_n)\ge n$ for every $n$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+If $B(x)=m$, then $b_m\le x$, hence $a_m\le Cb_m\le Cx$ and $A(Cx)\ge m$.
+Thus (a) implies (b), while (b) implies (c) by taking $x=b_n$.  Finally (c) says that
+the $n$th element of $A$ is at most $Cb_n$, proving (a).
+\end{proof}
+
+\begin{proposition}[Finite-prefix compactness]\label{prop:compactness}
+Fix an integer $C\ge1$.  There exists an infinite primitive sequence with
+$a_n\le Cb_n$ for all $n$ if and only if, for every $N$, there is a primitive tuple
+\[
+  c_1<\cdots<c_N,\qquad c_i\le Cb_i\quad(1\le i\le N).
+\]
+\end{proposition}
+
+\begin{proof}
+Necessity follows by truncation.  Conversely, form a rooted tree whose level-$N$
+vertices are the feasible $N$-tuples, with edges given by extension.  Every vertex has
+finitely many children because the next coordinate is at most $Cb_{N+1}$, and every
+level is nonempty by hypothesis.  K\"onig's infinity lemma gives an infinite branch;
+its union is the required primitive sequence.
+\end{proof}
+
+Proposition~\ref{prop:compactness} is an exact necessary-and-sufficient condition but
+not yet an arithmetic characterization.  For the quasi-primitive special case, the
+missing assertion is a uniform bound on the finite dilation constants, not merely the
+existence of a witness for each fixed prefix with a prefix-dependent constant.
+
+\section{Published necessary conditions}
+
+Erd\H{o}s proved that every primitive $A$ satisfies
+\[
+  \sum_{\substack{a\in A\\a>1}}\frac1{a\log a}<\infty
+\]
+\cite{Erdos1935}.  Erd\H{o}s--S\'ark\"ozy--Szemer\'edi later proved that every
+infinite primitive $A$ satisfies
+\[
+  \sum_{\substack{a\in A\\a<x}}\frac1a
+  =o\!\left(\frac{\log x}{\sqrt{\log\log x}}\right)
+\]
+\cite{ESS1967}.  Applying these to a dominator and using $a_n\le Cb_n$ gives the two
+classical necessary conditions displayed on the problem page:
+\[
+  \sum_n\frac1{b_n\log b_n}<\infty,
+  \qquad
+  \sum_{b_n<x}\frac1{b_n}
+  =o\!\left(\frac{\log x}{\sqrt{\log\log x}}\right).
+\]
+The comparison is unaffected by finitely many terms or by replacing $x$ with $Cx$.
+
+Martin and Pomerance prove a substantial approximate converse for smoothly varying
+counting profiles \cite{MartinPomerance2011}.  It does not coordinate arbitrary abrupt
+bursts, which are central to both questions here.
+
+\section{A necessary condition for prescribed scales}
+
+\begin{theorem}\label{thm:harmonic-scales}
+If a primitive set $A$ and a constant $c>0$ satisfy
+$A(2^{n_i})\ge c2^{n_i}$ for every $i$, then
+\[
+  \sum_i\frac1{n_i}<\infty.
+\]
+\end{theorem}
+
+\begin{proof}
+We may take $0<c\le1$.  Put $X_i=2^{n_i}$ and $\delta=c/2$.  For all sufficiently
+large $i$,
+\[
+ \card{A\cap(\delta X_i,X_i]}
+ \ge A(X_i)-\lfloor\delta X_i\rfloor
+ \ge \frac c3X_i.
+\]
+Every element of this slice contributes at least $(X_i\log X_i)^{-1}$ to the
+Erd\H{o}s sum, so the slice contributes at least
+\[
+  \frac{c}{3\log X_i}=\frac{c}{3(\log2)n_i}.
+\]
+Choose an integer $r$ with $\delta2^r>1$.  Since the $n_i$ are strictly increasing
+integers, the slices with indices in any fixed residue class modulo $r$ are pairwise
+disjoint.  If $\sum_i1/n_i$ diverged, one residue-class subseries would diverge and
+force the Erd\H{o}s sum of $A$ to diverge, a contradiction.
+\end{proof}
+
+\section{The supplied partial-results manuscript}
+
+The 169-page stage manuscript \cite{Stage2026} explicitly states that it does not solve
+either characterization or the quasi-primitive special case.  It proposes many strong
+partial theorems.  The present project treats them as candidates rather than inherited
+facts until their hypotheses, analytic citations, and proofs are independently checked.
+The four terminal interfaces extracted from its dependency ledger are:
+
+\begin{enumerate}
+\item for quasi-primitive inputs, either a universal bounded-dilation embedding or a
+      genuine divergent obstruction;
+\item a necessary-and-sufficient cross-scale condition for arbitrary domination beyond
+      scalar and consecutive-load restrictions;
+\item a converse, or further obstruction, for exponent sequences satisfying harmonic,
+      global, and uniform local crowding restrictions;
+\item an actual-union estimate for middle-anchor low-multiplier events in a terminal
+      short interval, where natural-density and raw second-moment methods are reported
+      to fail.
+\end{enumerate}
+
+The most concrete first-question finite target is the conjectural universal factor-two
+witness for every finite quasi-primitive tuple.  Finite verification cannot by itself
+prove the infinite assertion, but a uniform theorem would combine immediately with
+Proposition~\ref{prop:compactness}.  Conversely, a single finite tuple requiring a
+constant greater than two would refute only the factor-two strengthening, not the
+original bounded-constant question.
+
+\section{Proof dependency and admission criteria}
+
+Any complete solution must supply a chain from one of the exact compactness interfaces
+to a verifiable arithmetic condition.  A route is not discarded for lack of a standard
+tool.  It is closed only by a counterexample, contradiction, or a theorem that its
+precise mechanism cannot imply the required node.  Failed routes are retained as
+barrier theorems with their logical scope stated explicitly.
+
+A final solution claim requires: (i) a complete paper proof; (ii) two independent
+adversarial reviews of every critical lemma; (iii) deterministic certificates for all
+finite computations; and (iv) a Lean theorem with no placeholders or project-defined
+axioms.  None of these conditions is presently asserted to hold for the full problem.
+
+\section{Conclusion}
+
+The exact historical problem remains open in this repository.  The contribution of this
+baseline is to fix the convention, prove the elementary reductions, pin the published
+necessary inputs, and expose the precise interfaces at which new mathematics is needed.
+Subsequent branch work will be promoted only when it strengthens this audited ledger
+without silently assuming one of the open interfaces.
+
+\bibliographystyle{plain}
+\bibliography{references}
+\end{document}

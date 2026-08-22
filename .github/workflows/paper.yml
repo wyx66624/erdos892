@@ -1,0 +1,25 @@
+name: Paper
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "paper/**"
+      - ".github/workflows/paper.yml"
+  pull_request:
+    branches: ["main"]
+    paths:
+      - "paper/**"
+      - ".github/workflows/paper.yml"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compile audited baseline
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: audited_baseline.tex
+          working_directory: paper
