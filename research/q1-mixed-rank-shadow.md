@@ -7,12 +7,17 @@ Global status: **OPEN**. Nothing below proves that every quasi-primitive sequenc
 ## 1. Claim labels and dependency policy
 
 - **THEOREM**: an elementary proof is included below.
+- **PUBLISHED INPUT**: the exact external theorem has been checked in its original or
+  authoritative modern source and is cited explicitly.
 - **CONDITIONAL**: the deduction is complete once the explicitly named external/manuscript input is admitted.
 - **CONJECTURE**: precise but unproved.
 - **BARRIER**: a precise proposed mechanism is refuted; this is not a counterexample to the Erdős problem.
 - **COMPUTATION**: finite sanity evidence only.
 
-The supplied 169-page manuscript is not treated as audited merely because it labels a statement a theorem. In particular, its Theorems 5.56 and 5.82 remain manuscript inputs until their external dependencies and proofs pass the repository review protocol.
+The supplied 169-page manuscript is not treated as audited merely because it labels a
+statement a theorem.  The component used in its Theorem 5.56 is reproved below from the
+verified Katona shadow theorem.  Its Theorem 5.82 remains a manuscript input until its
+external dependencies and proof pass the repository review protocol.
 
 ## 2. Exact setting
 
@@ -42,7 +47,9 @@ is pairwise non-coprime. Indeed, two strict multiples \(du,dv\) have gcd exactly
 
 ### 3.1 The only non-elementary input
 
-**KATONA-SHADOW input.** If \(\mathcal A\) is a finite intersecting family of \(s\)-subsets of a finite set, then every subfamily \(\mathcal G\subseteq\mathcal A\) satisfies
+**PUBLISHED INPUT (KATONA-SHADOW, source verified).** If \(\mathcal A\) is a finite
+intersecting family of \(s\)-subsets of a finite set, then every subfamily
+\(\mathcal G\subseteq\mathcal A\) satisfies
 
 \[
   |\partial_{\rm set}\mathcal G|\ge |\mathcal G|,
@@ -50,11 +57,16 @@ is pairwise non-coprime. Indeed, two strict multiples \(du,dv\) have gcd exactly
 
 where \(\partial_{\rm set}\mathcal G\) is the family of all \((s-1)\)-subsets contained in members of \(\mathcal G\).
 
-This is the form attributed in the supplied manuscript to G. O. H. Katona, *Intersection theorems for systems of finite sets*, Acta Math. Acad. Sci. Hungar. 15 (1964), 329-337. The exact source statement must still be checked independently before admission to `main`.
+This follows from G. O. H. Katona,
+[*Intersection theorems for systems of finite sets* (1964)](https://real.mtak.hu/21124/1/paper_1.pdf).
+The precise general form is also stated in
+[Frankl--Katona (2021), Theorem 1.3](https://www.renyi.hu/~ohkatona/paper_157.pdf);
+take \(t=1\) and \(\ell=s-1\).  When \(s=1\), an intersecting family of singletons
+has at most one member and the assertion is immediate.
 
 ### 3.2 Exact-rank lemma, with the exponent-vector step audited
 
-**CONDITIONAL LEMMA 3.1 (exact-rank two-shadow map).** Assume KATONA-SHADOW. Let \(F\) be a finite pairwise non-coprime family with \(\Omega(e)=k\ge 1\) for all \(e\in F\). Then there is a map
+**THEOREM 3.1 (exact-rank two-shadow map).** Let \(F\) be a finite pairwise non-coprime family with \(\Omega(e)=k\ge 1\) for all \(e\in F\). Then there is a map
 
 \[
   \psi:F\longrightarrow \partial F,
@@ -95,7 +107,7 @@ Now combine the maps over \(s\). If an integer \(d\) has support size \(r\), a p
 
 ### 3.3 New mixed-rank extension
 
-**CONDITIONAL THEOREM 3.2 (mixed-rank two-shadow theorem).** Assume KATONA-SHADOW. Let \(E\subseteq\{2,3,\ldots\}\) be finite or countable and pairwise non-coprime. No common value of \(\Omega\) is assumed. There are maps
+**THEOREM 3.2 (mixed-rank two-shadow theorem).** Let \(E\subseteq\{2,3,\ldots\}\) be finite or countable and pairwise non-coprime. No common value of \(\Omega\) is assumed. There are maps
 
 \[
   \psi:E\to\mathbb N,
@@ -119,7 +131,7 @@ Equivalently, \(|\psi^{-1}(d)|\le2\) for every \(d\). In particular, for every f
 \]
 
 The integer fibre cap (equivalently, the number of types) two is best possible.
-This does not assert that the real coefficient (2) in (1) is optimal.
+This does not assert that the real coefficient \(2\) in (1) is optimal.
 
 **Proof, finite case.** Partition
 
@@ -128,7 +140,7 @@ This does not assert that the real coefficient (2) in (1) is optimal.
   \qquad E_k=\{e\in E:\Omega(e)=k\}.
 \]
 
-Apply Lemma 3.1 separately to every nonempty \(E_k\). Its shadow lies entirely in the layer \(\Omega=k-1\). Shadows belonging to different \(k\)'s are therefore disjoint, so combining the maps does not increase the fibre bound. Colour the at most two members in each fibre by \(0,1\); this gives (MS). Restricting the map to \(G\) gives (1).
+Apply Theorem 3.1 separately to every nonempty \(E_k\). Its shadow lies entirely in the layer \(\Omega=k-1\). Shadows belonging to different \(k\)'s are therefore disjoint, so combining the maps does not increase the fibre bound. Colour the at most two members in each fibre by \(0,1\); this gives (MS). Restricting the map to \(G\) gives (1).
 
 **Proof, countable case.** Form a bipartite graph with left side \(E\), right side \(\mathbb N\times\{0,1\}\), and
 
@@ -156,7 +168,7 @@ This is pairwise non-coprime, every member has \(\Omega=3\), and
   \partial E^\star=\{p^2,q^2,r^2,pq,pr,qr\}.
 \]
 
-Hence \(|E^\star|=7>|\partial E^\star|=6\), so a one-type injective shadow map is impossible. Theorem 3.2 supplies two types, and therefore the minimum *integer fibre cap* is two.  The example supplies only the real ratio (7/6), not a proof that the coefficient (2) in (1) is optimal. If pairwise non-coprimality is removed, an arbitrarily large family of distinct primes has shadow \(\{1\}\), so no uniform fibre bound is possible.
+Hence \(|E^\star|=7>|\partial E^\star|=6\), so a one-type injective shadow map is impossible. Theorem 3.2 supplies two types, and therefore the minimum *integer fibre cap* is two.  The example supplies only the real ratio \(7/6\), not a proof that the coefficient \(2\) in (1) is optimal. If pairwise non-coprimality is removed, an arbitrarily large family of distinct primes has shadow \(\{1\}\), so no uniform fibre bound is possible.
 
 **COMPUTATION (sanity check only).** With \((p,q,r)=(2,3,5)\), a direct bipartite matching gives, among others,
 
@@ -198,7 +210,7 @@ contradicting that \(d=\sigma(de_2)\) is a lower cover. Thus \(E_d\) is primitiv
 
 contradicting quasi-primitivity. ∎
 
-**CONDITIONAL COROLLARY 4.2 (universal abstract half-size code).** Assume KATONA-SHADOW. For every finite or countable quasi-primitive \(B\), every lower-cover selector admits maps
+**COROLLARY 4.2 (universal abstract half-size code).** For every finite or countable quasi-primitive \(B\), every lower-cover selector admits maps
 
 \[
   b\longmapsto\bigl(\sigma(b),s(b),t(b)\bigr)
@@ -405,7 +417,8 @@ These conjectures are intentionally kept separate. Failure of one does not close
 ## 9. Counterexample report
 
 - **No counterexample was found to the quasi-primitive implication.**
-- **No counterexample was found to Theorem 3.2.** Its derivation is complete modulo the explicitly stated Katona shadow theorem.
+- **No counterexample was found to Theorem 3.2.** Its external Katona input was
+  independently source-verified, and the reduction above was independently audited.
 - Strict counterexamples were found or verified only for stronger mechanisms:
   - one shadow type: \(E^\star\);
   - forgetting the labels after an arbitrary shadow choice: \(\{6,20\}\) with shadows \(2,4\);
