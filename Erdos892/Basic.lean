@@ -45,14 +45,14 @@ theorem Primitive.quasiPrimitive {A : Set ℕ} (hA : Primitive A) :
   have hdn : d ∣ n := hEq ▸ Nat.gcd_dvd_right m n
   exact hmn (hdm ▸ hdn)
 
-/-- An injective recoding that reflects divisibility preserves primitivity.  This is
+/-- A recoding that reflects divisibility preserves primitivity.  This is
 the abstract core used by many marker and prime-substitution constructions. -/
 theorem Primitive.image_of_reflects_dvd {A : Set ℕ} {f : ℕ → ℕ}
-    (hA : Primitive A) (hf : Function.Injective f)
+    (hA : Primitive A)
     (hreflect : ∀ ⦃m n : ℕ⦄, m ∈ A → n ∈ A → f m ∣ f n → m ∣ n) :
     Primitive (f '' A) := by
   rintro _ ⟨m, hm, rfl⟩ _ ⟨n, hn, rfl⟩ hdiv
-  exact hf (hA hm hn (hreflect hm hn hdiv))
+  exact congrArg f (hA hm hn (hreflect hm hn hdiv))
 
 /-- Existence of a primitive sequence obeying one uniform multiplicative deadline. -/
 def HasPrimitiveDominator (b : ℕ → ℕ) : Prop :=
