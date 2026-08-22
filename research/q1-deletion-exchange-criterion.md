@@ -9,10 +9,11 @@ prime is allowed to change.  It has two purposes.
 
 First, it gives an exact necessary-and-sufficient criterion for changing one
 old state and then inserting the missing member.  In the B24 regime, the
-criterion has a particularly rigid form: if the blocker stays in the type of
-the option it blocks, the only deletions which can free the option are the
-other support primes of the missing member which occur to exponent exactly
-one in the blocker.
+criterion has a particularly rigid valuation form: if the blocker stays in
+the type of the option it blocks, a deletion frees the option exactly when
+the deleted prime is not an exponent surplus of the blocker over the missing
+member.  For a squarefree missing member this reduces to deleting another
+support prime which occurs once in the blocker.
 
 Second, an infinite family shows that neither of those two deletions need be
 successful for the `(2,0)` blocker.  The family is nevertheless repaired by
@@ -147,20 +148,22 @@ h/r is incomparable with e/s
 if and only if
 
 ```
-r in supp(e)\{s}  and  v_r(h)=1.                 (2.1)
+r in supp(e)  and  1 <= v_r(h) <= v_r(e).         (2.1)
 ```
 
 For type `1`, the prime `r` in (2.1) must additionally be odd, as required by
-state admissibility.
+state admissibility.  Equivalently, (2.1) consists of the possible case
+`r=s` with `v_s(e)>=2`, together with the cases `r!=s` satisfying
+`v_r(h)=v_r(e)`.
 
 #### Proof
 
 Because `h` blocks `(s,t)`, one has `e/s | h/d`.  Apply the immediate-shadow
 criterion to the incomparable palette members `e,h`.  It follows that `s` is
-a fragile surplus of `e` over `h` and `d in D(h,e)`.  Since `e` is squarefree,
+a fragile surplus of `e` over `h` and `d in D(h,e)`.  Thus
 
 ```
-v_s(h)=0,              D(e,h)={s}.               (2.2)
+v_s(e)=v_s(h)+1,        D(e,h)={s}.               (2.2)
 ```
 
 Apply the criterion again, now with the proposed deletion `r`.  The first
@@ -178,21 +181,20 @@ h/r | e/s
 ```
 
 if and only if `r` is a fragile surplus of `h` over `e` (the other required
-condition `s in D(e,h)` is automatic by (2.2)).
+condition `s in D(e,h)` is automatic by (2.2)).  Consequently, if
+`r notin D(h,e)`, neither orientation can occur: (2.3) fails directly, and
+`r` cannot be a fragile surplus of `h` over `e`.
 
-If `r|h` and `r notin D(h,e)`, then `v_r(h)<=v_r(e)`.  Equation (2.2) rules
-out `r=s`; a prime outside `supp(e)` would have positive exponent in `h` and
-zero exponent in `e`, putting it in `D(h,e)`.  Therefore
-`r in supp(e)\{s}` and, by squarefreeness of `e`, `v_r(h)=1`.  Conversely,
-these two conditions imply `r notin D(h,e)`.  They also make it impossible
-for `r` to be a fragile surplus of `h` over `e`.  Equations (2.3) and its
-reverse therefore exclude both orientations of comparability exactly under
-(2.1).  ∎
+For a prime divisor `r|h`, the condition `r notin D(h,e)` is exactly
+`1<=v_r(h)<=v_r(e)`, which also forces `r in supp(e)`.  This is (2.1).
+If `r!=s`, equation (2.2) gives `v_r(h)>=v_r(e)`, so (2.1) is equivalent to
+`v_r(h)=v_r(e)`.  If `r=s`, (2.2) turns (2.1) into
+`1<=v_s(e)-1`, equivalently `v_s(e)>=2`.  This proves all stated forms.  ∎
 
-Define the finite **unit-support candidate set**
+Define the finite **valuation-balanced candidate set**
 
 ```
-U_t(s,h) = {r in supp(e)\{s} : v_r(h)=1 and r is admissible in type t}.
+U_t(s,h) = {r|h prime : v_r(h)<=v_r(e) and r is admissible in type t}.
 ```
 
 ### Corollary 2.3 (same-type deletion-exchange criterion)
@@ -394,10 +396,11 @@ Hasse forests open.  No conjecture-level Lean formalization is justified.
 3. **Type admissibility.**  The original type-`1` deletions `d_B1,d_C1` are
    odd.  The repaired state deletes the odd prime `b`.  The prime `a=2` is
    deleted only in type `0`.
-4. **Support exponents.**  Lemma 2.2 uses squarefreeness of
-   `e=2pq`, not of the blockers.  It correctly excludes a support prime whose
-   exponent in the blocker is at least two.  The exponent two at `b` in
-   `G_b` is retained after deleting one copy.
+4. **Support exponents.**  B24 fixes `supp(e)={2,p,q}` but does not make `e`
+   squarefree.  Lemma 2.2 is therefore stated valuation-wise.  In Proposition
+   3.1 the displayed `e=abc` is squarefree, so its candidate set for `(a,0)`
+   reduces to `{b,c}`.  The exponent two at `b` in `G_b` is retained after
+   deleting one copy.
 5. **No private-prime shortcut for `A`.**  The prime `d_A` is deliberately
    shared by `A,G_b,G_c`; primitivity is checked by the missing support primes
    and by the extra exponent or `delta`.
@@ -410,4 +413,3 @@ Hasse forests open.  No conjecture-level Lean formalization is justified.
    type-`0` shadow pairs in (3.3), the type-`1` pair in (3.4), both collisions
    in (3.2), and all repaired-row pairs.  A deterministic enumeration may be
    saved as a certificate but must not replace the proofs above.
-
