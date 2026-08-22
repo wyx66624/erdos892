@@ -121,6 +121,77 @@ not yet an arithmetic characterization.  For the quasi-primitive special case, t
 missing assertion is a uniform bound on the finite dilation constants, not merely the
 existence of a witness for each fixed prefix with a prefix-dependent constant.
 
+\section{A sufficient theorem for arbitrary irregularity}
+
+The following result appeared in the supplied manuscript and has now received two
+independent line-by-line audits.  Its proof is included in full.
+
+\begin{theorem}[Dyadic reciprocal-load criterion]\label{thm:reciprocal-load}
+Let $b_1<b_2<\cdots$ be positive integers and suppose
+\[
+  H:=\sum_{n=1}^{\infty}\frac1{b_n}<\infty.
+\]
+If $K$ is an integer with $K\ge\max\{4,4H\}$, then there is a primitive sequence
+$a_1<a_2<\cdots$ satisfying
+\[
+  a_n\le 2K b_n\qquad(n\ge1).
+\]
+\end{theorem}
+
+\begin{proof}
+For $j\ge0$ put
+\[
+ D_j=\{n:2^j\le b_n<2^{j+1}\},\qquad m_j=\card{D_j},
+ \qquad I_j=(K2^j,2K2^j]\cap\N.
+\]
+Distinctness of the $b_n$ gives $m_j\le2^j$, while $I_j$ has exactly $K2^j$
+members.  We recursively choose $m_j$ targets from $I_j$.
+
+Suppose all earlier target blocks have been selected and let $E_{<j}$ be their
+union.  Since a target chosen from $I_i$ exceeds $K2^i$,
+\[
+ R_{<j}:=\sum_{a\in E_{<j}}\frac1a
+ <\frac1K\sum_{i<j}\frac{m_i}{2^i}.
+\]
+For $n\in D_i$ we have $b_n<2^{i+1}$, and consequently
+\[
+ \frac{m_i}{2^i}<2\sum_{n\in D_i}\frac1{b_n}.
+\]
+Thus $R_{<j}<2H/K\le1/2$.  We also have
+\[
+ \card{E_{<j}}=\sum_{i<j}m_i\le\sum_{i<j}2^i=2^j-1.
+\]
+
+Delete from $I_j$ every multiple of an earlier target.  A fixed $a\in E_{<j}$
+has at most $K2^j/a+1$ multiples in this interval, so the union bound deletes at
+most
+\[
+ K2^jR_{<j}+\card{E_{<j}}
+ \le \frac K2,2^j+2^j-1.
+\]
+At least
+\[
+ K2^j-\frac K2,2^j-2^j+1
+ =\left(\frac K2-1\right)2^j+1
+ \ge2^j\ge m_j
+\]
+candidates remain.  Choose any $m_j$ of them.
+
+Each target block is primitive because two distinct integers in $(X,2X]$ cannot
+divide one another.  Every later block is strictly larger than every earlier block;
+size excludes divisibility from later to earlier, while the deletion rule excludes
+divisibility from earlier to later.  The union is therefore primitive.  Finally,
+the source bins and target blocks occur in the same order.  Matching within each
+block increasingly, $n\in D_j$ implies
+\[
+ a_n\le2K2^j\le2Kb_n.
+\]
+\end{proof}
+
+This criterion permits arbitrary burstiness.  It is not necessary: a sequence of
+order $n\log n$ is dominated by the primes although its ordinary reciprocal sum
+diverges.
+
 \section{Published necessary conditions}
 
 Erd\H{o}s proved that every primitive $A$ satisfies

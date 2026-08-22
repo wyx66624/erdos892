@@ -19,6 +19,7 @@ dependency is independently audited.
 | B4 | Domination implies the classical reciprocal-sum little-o bound. | proved modulo source | Erdős–Sárközy–Szemerédi (1967) |
 | B5 | Positive density at every scale \(2^{n_i}\) implies \(\sum_i1/n_i<\infty\). | proved | B3 plus disjoint shells |
 | B6 | The intended gcd-free condition means incomparable input pairs. | source-verified | Erdős–Sárközy–Szemerédi (1970), pp. 41–42 |
+| B7 | If \(\sum_n1/b_n<\infty\), then \((b_n)\) has a primitive dominator with an explicit constant. | independently proved and reviewed | elementary dyadic greedy construction |
 | L1 | `Primitive.image_of_reflects_dvd` in Lean. | formally checked when CI is green | Mathlib only |
 
 ## Candidate results from the supplied manuscript
@@ -28,7 +29,6 @@ the PDF.
 
 | Candidate | Claimed role | Current gate |
 |---|---|---|
-| C1 | Summable ordinary reciprocal load suffices for arbitrary irregular \(b_n\). | proof audit required |
 | C2 | Every arbitrary-height two-adic tower over an odd primitive skeleton is dominated. | analytic reservoir proof and Lean abstraction under audit |
 | C3 | Every quasi-primitive set obeys a consecutive-density local packing law. | published combinatorial input and reduction under audit |
 | C4 | Polynomial density scales \(n_i=\lceil i^p\rceil\) are admissible iff \(p>1\). | Ford/Tenenbaum dependencies and maximal-overlap proof under audit |
