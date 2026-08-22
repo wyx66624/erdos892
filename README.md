@@ -65,6 +65,9 @@ sequence is already primitive.
 - [`research/q1-nine-star-reduction.md`](research/q1-nine-star-reduction.md): the
   exact three-singleton-signature structure forced on every hypothetical
   nine-member star obstruction, leaving a quantified exchange problem.
+- [`research/q1-nine-type-flip-boundary.md`](research/q1-nine-type-flip-boundary.md):
+  unique blockers in the three-singleton regime and a parametric strict barrier to
+  the pure `(2,0)` type flip, with an explicit deletion-change repair.
 - [`research/q2-actual-union.md`](research/q2-actual-union.md): extended Q2 proof,
   actual-union interfaces, counterexamples, and reproducible finite experiments.
 - [`research/q2-maximal-swap-rank3.md`](research/q2-maximal-swap-rank3.md): exact
@@ -79,6 +82,10 @@ sequence is already primitive.
 - [`research/general-surplus-rounding.md`](research/general-surplus-rounding.md):
   exact Laplace, width-saturation, Cantelli, and negative-association rounding
   criteria, their König lift, and a strict infinite width-union-bound barrier.
+- [`research/general-positive-surplus-gap.md`](research/general-positive-surplus-gap.md):
+  an explicit true-divisor-poset gap `rho_9=8/9<22/21=rho_9^*`, extended by one
+  projection-consistent random primitive-set witness to every later prime deadline;
+  this strictly rules out pure first-moment surplus rounding at fixed dilation.
 - [`archive/README.md`](archive/README.md): provenance and checksum of the supplied
   169-page partial-results manuscript.
 - [`archive/stage-2026-08-20.pdf`](archive/stage-2026-08-20.pdf): directly readable
