@@ -53,6 +53,9 @@ sequence is already primitive.
 - [`research/q1-hbc-five-point.md`](research/q1-hbc-five-point.md): a
   non-computational proof that every quasi-primitive set of at most five elements—and
   every intrinsic-height selector on it—admits HBC.
+- [`research/q1-five-child-star.md`](research/q1-five-child-star.md): minimum-rank
+  insertion and a two-prime partition proving HBC for every one-root star with at
+  most five children, plus a strict barrier to the one-type shortcut.
 - [`research/q2-actual-union.md`](research/q2-actual-union.md): extended Q2 proof,
   actual-union interfaces, counterexamples, and reproducible finite experiments.
 - [`research/q2-maximal-swap-rank3.md`](research/q2-maximal-swap-rank3.md): exact
