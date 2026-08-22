@@ -24,6 +24,7 @@ dependency is independently audited.
 | B9 | For the logarithmic barrier profile, every middle anchor has shifted-block avoidance mass \(\gg 1/i\); hence unconditioned supremum and mean anchorwise summation cannot close the construction. | independently proved modulo named standard analytic inputs | Mertens, dyadic semiprime bounds, dyadic PNT |
 | B10 | Fixed-dilation deadline feasibility is exactly measured by an integer antichain margin; its one-point random relaxation has a weighted maximum-antichain dual. Prefix width is strictly weaker, and in the actual divisor poset \(P_{15}\) the random relaxation has value 1 while the integer margin is \(6/7\). | independently proved and twice reviewed | convex separation, Stanley chain polytope, explicit two-antichain and nine-chain certificates |
 | B11 | For the logarithmic barrier profile, maximality is exactly equivalent to avoidance by the full coprime size-rank swap spectrum. The actual union has exact deterministic-selector and reciprocal-multiplicity formulas; fixed quotient ranks at most 2 contribute \(o(X_k)\), while unweighted rank-3 candidate pairs remain \(\gg X_k\) even inside two-sided source/terminal \(\Omega\)-bands. | independently proved and twice reviewed modulo named analytic inputs | coprime-swap identity, Turán--Kubilius, fixed-rank Hardy--Ramanujan, odd dyadic Erdős--Kac, audited Q2.1 inputs |
+| B12 | Conditional on the hereditary batch condition (HBC), every quasi-primitive input admits an absolute-dilation primitive injection: a sparse two-prime reservoir absorbs all source factors, and a sublinear weighted batch-erasure lemma encodes the remaining binary shadow words. | independently proved and twice reviewed modulo dyadic PNT | absorption divisibility reflection, weighted primitive-batch erasure, binary-word growth bound, order statistics |
 | L1 | `Primitive.image_of_reflects_dvd` in Lean. | formally checked | Lean CI run 16 |
 | L2 | Finite canonical top-half saturation for a fixed lower kernel. | formally checked and independently reviewed | PR 1; Lean CI run 16 |
 
@@ -41,12 +42,18 @@ the PDF.
 
 ## Exact unresolved interfaces
 
-1. **Quasi-primitive embedding.** Prove a uniform finite-prefix dilation bound for
-   every historically quasi-primitive tuple, or construct a family whose required
-   dilation constants diverge. B8 reduces every Hasse edge to a half-size shadow plus
-   one bit, but the parent/type labels and cross-rank divisibility still need a
-   globally primitive arithmetic encoding with one uniform constant. A finite obstruction alone is not
-   an infinite counterexample unless it is amplified without bounded recoding.
+1. **Quasi-primitive embedding.** Prove the universal hereditary batch
+   condition (HBC), jointly selecting the immediate-shadow parents and binary types,
+   or construct an amplifiable family for which every such selection fails. B8 and
+   B12 show that HBC is sufficient and that, once it is available, all arithmetic
+   parent/type labels can be erased with one absolute dilation. A fixed selector is
+   not enough: the explicit nine-element palette in
+   `research/q1-absorbed-hbc.md` defeats all 135 admissible type choices for one
+   selector but has a repaired selector satisfying HBC. Likewise, encoding the full
+   deleted-prime word within product budget is impossible for the alphabet
+   \(\{2,3,5\}\), since \(1/2+1/3+1/5>1\). These close only those stated
+   mechanisms. A finite obstruction is not an infinite counterexample unless it is
+   amplified without bounded recoding.
 2. **General domination.** Identify a cross-scale condition beyond the two classical
    scalar restrictions and consecutive dyadic load packing, then prove both
    directions.
@@ -61,8 +68,10 @@ the PDF.
    B11 reduces the first unsolved quotient layer to rank 3 and separates two exact
    targets: a deterministic selector sum and a symmetric `1/nu` maximal-anchor mass.
    Neither target has yet been shown to be `o(X_k)`.
-4. **Formalization.** Formalize the compactness interfaces first; analytic inputs are
-   admitted only through precisely stated Mathlib theorems or proved modules.
+4. **Formalization.** Do not begin the conjecture-level Lean development until
+   the complete written proof has passed two independent reviews. After that gate,
+   formalize compactness interfaces first; analytic inputs are admitted only through
+   precisely stated Mathlib theorems or proved modules.
 
 ## Branch policy
 
