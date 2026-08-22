@@ -79,6 +79,10 @@ sequence is already primitive.
 - [`research/general-surplus-rounding.md`](research/general-surplus-rounding.md):
   exact Laplace, width-saturation, Cantelli, and negative-association rounding
   criteria, their König lift, and a strict infinite width-union-bound barrier.
+- [`research/general-positive-surplus-gap.md`](research/general-positive-surplus-gap.md):
+  an explicit true-divisor-poset gap `rho_9=8/9<22/21=rho_9^*`, extended by one
+  projection-consistent random primitive-set witness to every later prime deadline;
+  this strictly rules out pure first-moment surplus rounding at fixed dilation.
 - [`archive/README.md`](archive/README.md): provenance and checksum of the supplied
   169-page partial-results manuscript.
 - [`archive/stage-2026-08-20.pdf`](archive/stage-2026-08-20.pdf): directly readable
