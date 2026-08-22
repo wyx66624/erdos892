@@ -1,6 +1,6 @@
 # Erdős 892, Q2: source-local block decomposition of the rank-three multiplicity
 
-**Draft status.** This note does not prove the rank-three estimate
+**Reviewed paper status.** This note does not prove the rank-three estimate
 \(W_{k,3}^{A,B}=o(X_k)\), and therefore does not decide Q2.  It proves an
 exact finite-block formula for its summand.  The formula localizes the
 size-conditioned rank problem from all divisors of the terminal integer to at
