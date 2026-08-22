@@ -35,6 +35,7 @@ dependency is independently audited.
 | B20 | Every primitive pairwise non-coprime quotient palette `E subset Z_{>=2}` with at most five members admits weighted immediate-shadow choices whose two type classes are injective and primitive. More generally this holds at arbitrary cardinality when one member uses at most two distinct primes. Hence every one-root star with at most five children satisfies HBC, and any one-root-star HBC obstruction has at least six children. | independently proved and twice reviewed | common-prime partition, fragile-surplus valuation lemma, minimum-`Omega` blocker count, B18 four-child star lemma |
 | B21 | Every primitive pairwise non-coprime quotient palette `E subset Z_{>=2}` with at most six members admits weighted immediate-shadow choices whose two type classes are injective and primitive. In the unique five-option tie, full blocker saturation forces a `{2,p}` prime cover and hence a global two-batch repair. Thus every one-root star with at most six children satisfies HBC. | independently proved and twice reviewed | B20 five-child theorem, minimum-`Omega` blocker orientation, saturated blocker bijection, two-prime common-denominator repair |
 | B22 | Every primitive pairwise non-coprime quotient palette `E subset Z_{>=2}` with at most eight members admits weighted immediate-shadow choices whose two type classes are injective and primitive. After one blocker is selected per saturated option, any two support primes cover all blockers; at most two extras have a two-point support transversal. A nine-member family strictly defeats this two-prime-cover repair but has an explicit one-change HBC repair. | independently proved and twice reviewed | strong induction from B20/B21, support-transversal saturation lemma, two-prime common-denominator repair, symbolic nine-member certificate |
+| B23 | A finite fractional deadline-antichain witness rounds to an integer antichain under an exact rational Laplace budget; separate width-saturation, Cantelli, and negative-association surplus criteria follow. Uniform NA surplus plus a finite early-safe window lifts by König to infinite domination. Directly summing the width-saturation bounds for all prefixes would force `b_i` to be linear and violate the classical reciprocal-log necessary condition. | independently proved and twice reviewed | Markov/Cantelli inequalities, exact divisor-poset width, negative association, geometric tail bound, König compactness, B10 deadline model |
 | L1 | `Primitive.image_of_reflects_dvd` in Lean. | formally checked | Lean CI run 16 |
 | L2 | Finite canonical top-half saturation for a fixed lower kernel. | formally checked and independently reviewed | PR 1; Lean CI run 16 |
 
@@ -73,8 +74,15 @@ the PDF.
    scalar restrictions and consecutive dyadic load packing, then prove both
    directions.
    B10 closes only the claim that the complete chain polytope remains integral after
-   direct intersection with nested deadline lower bounds; extended formulations,
-   valid inequalities, surplus rounding, and all-constant obstructions remain open.
+   direct intersection with nested deadline lower bounds; extended formulations and
+   all-constant obstructions remain open. B23 now supplies four rigorous surplus-rounding
+   interfaces (rational Laplace budgets, width saturation, Cantelli variance control,
+   and negative association) and a König lift. Its exact remaining gaps are to derive a
+   uniform positive fractional surplus from arithmetic hypotheses, construct NA or
+   directly Laplace-controlled witnesses without losing that surplus, and make one
+   finite early-safe window compatible with all later prefixes. B23 also strictly rules
+   out only the strategy of summing the width-saturation failure bound over every
+   prefix; block, stopping-time, and correlated approaches remain open.
 3. **Prescribed density scales.** Either control the actual terminal union of the
    middle-anchor low-multiplier events in the unresolved logarithmic profile, or
    exhibit a scale sequence satisfying all known local restrictions that is
