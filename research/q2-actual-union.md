@@ -59,7 +59,12 @@ needed for summation.
 
 ## 2. A semiprime floor for finite-block avoidance
 
-### Proposition Q2.1 (moving-endpoint semiprime floor) — **proved**
+### Proposition Q2.1 (moving-endpoint semiprime floor) — **proved modulo named standard analytic inputs**
+
+The analytic inputs are Lemma 8.37 of the stage manuscript, Mertens' theorem for
+prime reciprocals, the standard dyadic semiprime upper bound, and the prime number
+theorem in dyadic intervals.  They are named at the point of use; no stronger
+short-interval prime theorem is needed.
 
 Fix \(0<a<b<1/2\).  There is \(c_{a,b}>0\) such that, for every sufficiently large \(k\),
 every integer \(i\) with \(ak\le i\le bk\), and every odd
@@ -81,6 +86,18 @@ In particular, the anchorwise hypotheses (356) and (397) cannot hold for this pr
 This does **not** show that the profile is inadmissible; it shows that the unconditioned
 avoidance sets in (Q2.1) are too large to be summed one anchor at a time.
 
+To spell out the quantifiers, for every sufficiently large \(J\) choose
+\(k=\lceil J/a\rceil\); then
+\([ak,bk]\cap\mathbb Z\subseteq[J,k-2]\).  Then
+\[
+ \sum_{J\le i\le k-2}\varepsilon^\square_{i,k}
+ \ge c_{a,b}\sum_{ak\le i\le bk}\frac1i
+ \longrightarrow c_{a,b}\log(b/a)>0.
+\]
+On this strip \(H(i,k)=i\); hence any admissible majorant in (397) satisfies
+\(e_{i,i}\ge |E^\square_{i,k}(d)|/Y_{i,k,d}\ge c_{a,b}/i\), and the same
+non-vanishing conclusion follows.
+
 #### Proof
 
 Write
@@ -100,7 +117,11 @@ Uniformly for \(1\le h\le i\), Lemma 8.37 of the stage manuscript gives
 and \(D_{i,h}(d)=(\Theta_h,2\Theta_h]\cap\mathbb N_{\rm odd}\).  Also
 \(\mathcal D\subset(1,Z]\).
 
-Choose small \(\eta>0\), depending only on \(a,b\), and put \(P=Z^{\eta/2}\).
+Let \(\delta_{a,b}>0\) denote the uniform constant furnished by (Q2.8) below. Choose
+\[
+ 0<\eta<\min\{1,\delta_{a,b}/2\},
+\]
+depending only on \(a,b\), and put \(P=Z^{\eta/2}\).
 Let \(\mathcal U\) be the set of products \(u=pq\) of two distinct odd primes at most \(P\)
 such that none of \(p,q,pq\) lies in \(\mathcal D\).  Mertens' theorem gives
 
@@ -152,17 +173,22 @@ Regular variation of \(j(\log j)^2\), uniformly for \(ak\le i\le bk\), gives
  \ge 1+\delta_{a,b} \tag{Q2.8}
 \]
 
-for some \(\delta_{a,b}>0\).  Choose \(\eta<\delta_{a,b}/2\).  Then, for every
-\(u\in\mathcal U\), \(Y/u\ge Z^{1+\delta_{a,b}/2}\).  The standard uniform Buchstab
-lower bound for rough integers therefore yields
+for some \(\delta_{a,b}>0\).  Then, for every \(u\in\mathcal U\),
+\[
+ x_u:=Y/u\ge Z^{1+\delta_{a,b}/2},
+ \qquad \log x_u\asymp_{a,b}\log Z.
+\]
+For all sufficiently large \(k\), \(x_u/2>Z\).  The prime number theorem in dyadic
+intervals, uniformly because \(x_u\to\infty\), therefore gives
 
 \[
- \#\left\{s:\frac{Y}{2u}<s\le\frac Yu,\ P^-(s)>Z\right\}
+ \#\left\{s:\frac{Y}{2u}<s\le\frac Yu,\ s\text{ prime}\right\}
  \gg_{a,b}\frac{Y}{u\log Z}. \tag{Q2.9}
 \]
 
-The representations \(r=us\) in (Q2.9) are distinct because \(u\) is exactly the part of
-\(r\) supported on primes at most \(Z\).  They are odd.  Moreover every divisor of \(r\)
+Every prime \(s\) counted in (Q2.9) exceeds \(Z\).  The representations \(r=us\)
+are distinct because \(u\) is exactly the part of \(r\) supported on primes at most
+\(Z\).  They are odd.  Moreover every divisor of \(r\)
 which is at most \(Z\) divides \(u\), and the only divisors of \(u=pq\) are
 \(1,p,q,pq\).  By the definition of \(\mathcal U\), none lies in \(\mathcal D\).  Thus all
 these \(r\) belong to \(E^{\square}_{i,k}(d)\).  Summing (Q2.9), using (Q2.7), and noting
@@ -196,6 +222,9 @@ Thus replacing the supremum over \(d\) by an average over \(d\) does not by itse
 the anchorwise sum.  A successful proof must combine the images \(dE^{\square}_{i,k}(d)\)
 as an actual union, or impose information omitted by (Q2.1), such as maximal-anchor survival
 and terminal-rank compatibility.
+
+Here \(|C_i|\gg_A X_i\) is the standard Erdős--Kac positive-tail estimate restricted
+to odd integers in a dyadic interval.  This analytic input is not formalized in Lean here.
 
 ## 3. Period-free finite Bonferroni certificates
 
@@ -249,6 +278,11 @@ small compared with \(Y\).  For a middle anchor, \(\log Y\asymp k(\log k)^2\), s
 certificates with \(|F|=k^{O(1)}\) and \(s=O(\log k)\) have a potentially negligible floor
 error.  The unresolved problem is to make the model quantity \(\mathcal B_{2s}(F)\) small
 after the maximal-anchor/actual-union conditioning.
+
+For a finite odd generator set \(F\), write
+\[
+ E(F)=\{r\in\mathbb N_{\rm odd}: f\nmid r\text{ for every }f\in F\}.
+\]
 
 ### Corollary Q2.4 (finite certificate sufficient condition) — **conditional**
 
